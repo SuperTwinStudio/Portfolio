@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Info -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twin Studio</title>
+    <link rel="icon" href="Data/Images/favicon.png">
+
+    <!-- Style & Scripts -->
+    <link rel="stylesheet" href="Data/CSS/main.css">
+    <script src="Data/JS/util.js"></script>
+</head>
+
+<!-- Page -->
+<body>
+
+      <!--$$$  /$$       /$$           /$$                          
+     /$$__  $$|__/      | $$          | $$                          
+    | $$  \__/ /$$  /$$$$$$$  /$$$$$$ | $$$$$$$   /$$$$$$   /$$$$$$ 
+    |  $$$$$$ | $$ /$$__  $$ /$$__  $$| $$__  $$ |____  $$ /$$__  $$
+     \____  $$| $$| $$  | $$| $$$$$$$$| $$  \ $$  /$$$$$$$| $$  \__/
+     /$$  \ $$| $$| $$  | $$| $$_____/| $$  | $$ /$$__  $$| $$      
+    |  $$$$$$/| $$|  $$$$$$$|  $$$$$$$| $$$$$$$/|  $$$$$$$| $$      
+     \______/ |__/ \_______/ \_______/|_______/  \_______/|-->      
+
+    <!-- Toggle (for mobile) -->
+    <div class="sidebarToggle" onclick="sidebar.toggle()">
+        <img src="Data/Images/Icons/menu.webp">
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar" onclick="sidebar.toggle()">
+        <div class="sidebarLayout" onclick="event.stopPropagation()">
+            <!-- Pages -->
+            <a id="goTo-home" class="sidebarButton" onclick="goTo('home')" selected>
+                <img src="Data/Images/Icons/home.webp">
+                <span id="sidebar-home">Home</span>
+                <indicator class="sidebarButtonIndicator"></indicator>
+            </a>
+            <a id="goTo-about" class="sidebarButton" onclick="goTo('about')">
+                <img src="Data/Images/Icons/about.webp">
+                <span id="sidebar-about">About</span>
+                <indicator class="sidebarButtonIndicator"></indicator>
+            </a>
+
+            <!-- Space -->
+            <div class="sidebarSpace"></div>
+            
+            <!-- Options -->
+            <a class="sidebarButton" onclick="swapLocale()">
+                <img src="Data/Images/Icons/language.webp">
+                <span id="sidebar-localization">Language</span>
+            </a>
+            <a class="sidebarButton" onclick="toggleTheme()">
+                <img src="Data/Images/Icons/theme.webp">
+                <span id="sidebar-theme">Theme</span>
+            </a>
+        </div>
+    </div>
+
+
+
+      <!--$$$                        /$$                           /$$
+     /$$__  $$                      | $$                          | $$
+    | $$  \__/  /$$$$$$  /$$$$$$$  /$$$$$$    /$$$$$$  /$$$$$$$  /$$$$$$
+    | $$       /$$__  $$| $$__  $$|_  $$_/   /$$__  $$| $$__  $$|_  $$_/
+    | $$      | $$  \ $$| $$  \ $$  | $$    | $$$$$$$$| $$  \ $$  | $$
+    | $$    $$| $$  | $$| $$  | $$  | $$ /$$| $$_____/| $$  | $$  | $$ /$$
+    |  $$$$$$/|  $$$$$$/| $$  | $$  |  $$$$/|  $$$$$$$| $$  | $$  |  $$$$/
+     \______/  \______/ |__/  |__/   \___/   \_______/|__/  |__/   \_-->
+
+    <div id="content">
+
+        <div id="home" class="page">
+            Gurt: Yo
+        </div>
+
+        <div id="about" class="page">
+            Yo: Whats up
+        </div>
+
+    </div>
+</body>
+
+<!-- Script -->
+<script src="Data/JS/main.js"></script>
+</html>

@@ -1,0 +1,642 @@
+@font-face { font-family: geist; src: url('../Fonts/Geist.ttf'); }  /* Default Text */
+@font-face { font-family: phonk; src: url('../Fonts/Phonk.ttf'); }  /* Titles */
+
+html {
+    /* Size */
+    width: 100%;
+    height: 100dvh;
+
+    /* Spacing */
+    padding: 0;
+    margin: 0;
+
+    /* Text */
+    font-family: geist;
+    font-size: 16px;
+    user-select: none;
+
+    /* Other */
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+
+    /* Text */
+    --text: #f5f5f5;
+    --textFilter: brightness(0) invert(1);
+    --textAlt: #63666d;
+    --textAltFilter: brightness(0) saturate(100%) invert(35%) sepia(24%) saturate(606%) hue-rotate(181deg) brightness(92%) contrast(86%);
+    --link: #f32853;
+    --linkFilter: brightness(0) invert(29%) sepia(74%) saturate(2123%) hue-rotate(327deg) brightness(83%) contrast(111%);
+
+    /* Layout */
+    --bg: #000000;
+    --backdrop: rgba(0, 0, 0, 0.4);
+    --hover: color-mix(in srgb, var(--textAlt) 25%, transparent);
+
+    /* Borders */
+    --borderTransparent: solid 1px transparent;
+    --border: solid 1px var(--text);
+    --borderSoft: solid 1px var(--hover);
+    --borderSoftThick: solid 2px var(--hover);
+}
+
+html[light] {
+    /* Colors */
+    --bg: #f5f5f5;
+    --hover: rgba(0, 0, 0, 0.2);
+    --borderSoftThick: solid 2px var(--hover);
+    --backdrop: rgba(0, 0, 0, 0.4);
+
+    /* Text */
+    --text: #000000;
+    --textFilter: brightness(0);
+    --textAlt: #83868d;
+    --textAltFilter: brightness(0) saturate(100%) invert(58%) sepia(24%) saturate(506%) hue-rotate(183deg) brightness(84%) contrast(87%);
+    --link: #f32853;
+    --linkFilter: brightness(0) invert(29%) sepia(74%) saturate(2123%) hue-rotate(327deg) brightness(83%) contrast(111%);
+}
+
+body {
+    /* Size */
+    width: 100%;
+    height: 100dvh;
+
+    /* Spacing */
+    padding: 0;
+    margin: 0;
+
+    /* Layout */
+    display: flex;
+    flex-direction: row;
+
+    /* Visuals */
+    background: var(--bg);
+    color: var(--text);
+    fill: var(--text);
+
+    /* Spacing */
+    --sidebarSpacing: 80px;
+    --pageSpacing: 20px;
+}
+
+body[noscroll] {
+    /* Other */
+    overflow: hidden;
+}
+
+@media screen and (orientation:portrait) {
+    body[sidebar] {
+        /* Other */
+        overflow: hidden;
+    }
+}
+
+@media screen and (orientation:portrait) {
+    body {
+        /* Spacing */
+        --sidebarSpacing: 0px;
+        --pageSpacing: 10px;
+    }
+}
+
+/* Block image grab */
+img {
+    -webkit-user-drag: none;
+}
+
+/* Links */
+a {
+    /* Text */
+    text-decoration: none;
+}
+
+a:not([class])[href] {
+    /* Visuals */
+    color: var(--link);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    /* Size */
+    width: 14px;
+    height: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+    /* Visuals */
+    background-color: var(--text);
+    border-radius: 7px;
+    border: solid 4px transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    /* Visuals */
+    border: solid 3px transparent;
+}
+
+/* Buttons */
+.button {
+    /* Size */
+    width: fit-content;
+    height: fit-content;
+
+    /* Spacing */
+    padding: 8px 16px;
+
+    /* Text */
+    color: var(--text);
+    font-size: 1rem;
+
+    /* Style */
+    border: var(--border);
+    border-radius: 30px;
+    outline: none;
+    
+    /* Other */
+    cursor: pointer;
+    transition: border .2s, background-color .2s;
+}
+
+.button:hover {
+    /* Style */
+    background-color: var(--hover);
+}
+
+/* Appear animation */
+.appear {
+    opacity: 0;
+}
+
+.appear[appeared] {
+    opacity: unset;
+    animation: appear ease-out .6s;
+}
+
+@keyframes appear {
+    from {
+        transform: translateY(80px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Glass */
+.glass {
+    background-color: color-mix(in srgb, var(--bg) 65%, transparent);
+    backdrop-filter: blur(10px);
+
+    box-sizing: border-box;
+    border: var(--borderSoft);
+}
+
+
+                                                       
+  /*$$$$$  /$$       /$$           /$$                          
+ /$$__  $$|__/      | $$          | $$                          
+| $$  \__/ /$$  /$$$$$$$  /$$$$$$ | $$$$$$$   /$$$$$$   /$$$$$$ 
+|  $$$$$$ | $$ /$$__  $$ /$$__  $$| $$__  $$ |____  $$ /$$__  $$
+ \____  $$| $$| $$  | $$| $$$$$$$$| $$  \ $$  /$$$$$$$| $$  \__/
+ /$$  \ $$| $$| $$  | $$| $$_____/| $$  | $$ /$$__  $$| $$      
+|  $$$$$$/| $$|  $$$$$$$|  $$$$$$$| $$$$$$$/|  $$$$$$$| $$      
+ \______/ |__/ \_______/ \_______/|_______/  \_______/|_*/
+
+/* Sidebar toggle */
+.sidebarToggle {
+    /* Size */
+    width: 50px;
+    height: 50px;
+
+    /* Layout */
+    box-sizing: border-box;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Visuals */
+    background-color: var(--bg);
+    border: var(--borderSoftThick);
+    border-radius: 15px;
+    opacity: 0;
+
+    /* Other */
+    z-index: 90;
+    pointer-events: none;
+}
+
+.sidebarToggle::after {
+    content: '';
+
+    /* Size */
+    width: 100%;
+    height: 100%;
+
+    /* Layout */
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    /* Visuals */
+    background-color: var(--hover);
+    border-radius: inherit;
+    opacity: 0;
+
+    /* Other */
+    transition: opacity .2s;
+}
+
+.sidebarToggle:hover::after {
+    /* Visuals */
+    opacity: 1;
+}
+
+.sidebarToggle > img {
+    /* Size */
+    width: 20px;
+    height: 20px;
+
+    /* Visuals */
+    filter: var(--textFilter);
+}
+
+@media screen and (orientation:portrait) {
+    .sidebarToggle {
+        /* Visuals */
+        opacity: 1;
+
+        /* Other */
+        pointer-events: unset;
+    }
+}
+
+/* Sidebar */
+.sidebar {
+    /* Size */
+    width: 100%;
+    height: calc(100dvh + var(--sidebarHiddenMargin));
+    
+    /* Layout */
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    /* Visuals */
+    background-color: transparent;
+
+    /* Other */
+    z-index: 100;
+    overflow-y: hidden;
+    pointer-events: none;
+    transition: background-color .2s, height .2s;
+
+    /* Variables */
+    --sidebarHiddenMargin: 300px; /* To fix viewport height changing in mobile */
+    --sidebarBorder: 2px;
+    --sidebarWidth: var(--sidebarWidthClosed);
+    --sidebarWidthOpen: 240px;
+    --sidebarWidthClosed: 80px;
+    --sidebarTransition: width .2s;
+}
+
+@media screen and (orientation:portrait) {
+    .sidebar {
+        --sidebarWidth: 0px;
+    }
+
+    .sidebar:not([open]) {
+        --sidebarBorder: 0px;
+    }
+
+    .sidebar[open] {
+        /* Visuals */
+        background-color: var(--backdrop);
+
+        /* Other */
+        pointer-events: all;
+        
+        /* Variables */
+        --sidebarWidth: var(--sidebarWidthOpen);
+    }
+}
+
+.sidebarLayout {
+    /* Size */
+    width: var(--sidebarWidth);
+    height: 100%;
+
+    /* Spacing */
+    padding: 100px 0 calc(100px + var(--sidebarHiddenMargin)) 0;
+
+    /* Layout */
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    /* Visuals */
+    background-color: var(--bg);
+    border-right: solid var(--sidebarBorder) var(--hover);
+
+    /* Other */
+    overflow-x: hidden;
+    pointer-events: all;
+    transition: var(--sidebarTransition);
+}
+
+@media screen and (orientation:landscape) {
+    .sidebarLayout:hover {
+        --sidebarWidth: var(--sidebarWidthOpen);
+    }
+}
+
+/* Sidebar buttons */
+.sidebarButton {
+    /* Size */
+    width: calc(var(--sidebarWidth) - calc(20px + var(--sidebarBorder)));
+    height: 40px;
+
+    /* Spacing */
+    margin: 0 10px;
+    padding-left: calc(calc(var(--sidebarWidthClosed) - 40px) / 2);
+
+    /* Layout */
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    /* Visuals */
+    border-radius: 20px;
+    color: var(--text);
+    
+    /* Other */
+    cursor: pointer;
+    transition: var(--sidebarTransition), background-color .2s;
+}
+
+.sidebarButton:hover {
+    /* Visuals */
+    background-color: var(--hover);
+}
+
+.sidebarButton[hidden] {
+    /* Layout */
+    display: none;
+}
+
+.sidebarButton > img {
+    /* Size */
+    width: 20px;
+    height: 20px;
+    
+    /* Visuals */
+    filter: var(--textFilter);
+}
+
+.sidebarButton > span {
+    /* Text */
+    white-space: nowrap;
+
+    /* Visuals */
+    opacity: 0;
+
+    /* Other */
+    transition: opacity .2s;
+}
+
+.sidebarLayout:hover > .sidebarButton > span {
+    /* Visuals */
+    opacity: 1;
+}
+
+@media screen and (orientation:portrait) {
+    .sidebar[open] .sidebarButton > span {
+        /* Visuals */
+        opacity: 1;
+    }
+}
+
+.sidebarButton > indicator {
+    /* Size */
+    width: 4px;
+
+    /* Layout */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -10px;
+
+    /* Visuals */
+    background-color: var(--text);
+    border-radius: 2px;
+    opacity: 0;
+
+    /* Other */
+    pointer-events: none;
+    transition: opacity .2s;
+}
+
+.sidebarButton[selected] > indicator {
+    /* Visuals */
+    opacity: 1;
+}
+
+/* Sidebar space */
+.sidebarSpace {
+    /* Size */
+    height: 10px; 
+    
+    /* Spacing */
+    margin: auto 0px;
+}
+
+
+
+ /*$      /$$                                        
+| $$$    /$$$                                        
+| $$$$  /$$$$  /$$$$$$  /$$$$$$$  /$$   /$$  /$$$$$$$
+| $$ $$/$$ $$ /$$__  $$| $$__  $$| $$  | $$ /$$_____/
+| $$  $$$| $$| $$$$$$$$| $$  \ $$| $$  | $$|  $$$$$$ 
+| $$\  $ | $$| $$_____/| $$  | $$| $$  | $$ \____  $$
+| $$ \/  | $$|  $$$$$$$| $$  | $$|  $$$$$$/ /$$$$$$$/
+|__/     |__/ \_______/|__/  |__/ \______/ |______*/
+
+/* Menu backdrop (click to close) */
+dialog:not(#snackbar)::backdrop {
+    /* Visuals */
+    background-color: var(--backdrop);
+}
+
+/* Menu container */
+dialog:not(#snackbar) {
+    /* Size */
+    width: 400px;
+    max-width: calc(100% - 20px);
+    max-height: calc(100% - 20px);
+    
+    /* Spacing */
+    padding: 0;
+    margin: auto;
+
+    /* Layout */
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* Visuals */
+    border-radius: 25px;
+    background-color: var(--bg);
+    border: var(--borderSoftThick);
+    outline: transparent;
+    color: var(--text);
+    opacity: 0;
+
+    /* Other */
+    z-index: 500;
+    user-select: none;
+    pointer-events: none;
+    transition: opacity .2s ease;
+    -moz-transition: none; /* Animation is broken in firefox, as always */
+}
+
+dialog:not(#snackbar)[open] {
+    /* Visuals */
+    opacity: 1;
+
+    /* Other */
+    pointer-events: auto;
+}
+
+/* Menu title */
+.menuTitle {
+    /* Text */
+    text-transform: uppercase;
+    font-family: phonk;
+    font-size: 1.4em;
+    line-height: 80px;
+}
+
+@media screen and (orientation:portrait) {
+    .menuTitle {
+        /* Text */
+        font-size: 1.3em;
+    }
+}
+
+/* Menu close button */
+.menuClose {
+    /* Size */
+    height: 40px;
+    width: 40px;
+
+    /* Layout */
+    box-sizing: border-box;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Visuals */
+    border: var(--borderTransparent);
+    border-radius: 40px;
+
+    /* Other */
+    cursor: pointer;
+    transition: background-color .2s, border .2s;
+}
+
+.menuClose img {
+    /* Size */
+    height: 14px;
+    width: 14px;
+
+    /* Visuals */
+    filter: var(--textFilter);
+}
+
+.menuClose:hover {
+    /* Visuals */
+    background-color: color-mix(in srgb, var(--accent) 30%, transparent);
+    border: var(--border)
+}
+
+/* Menu list */
+.menuList {
+    /* Size */
+    width: 100%;
+
+    /* Spacing */
+    margin-bottom: 20px;
+    padding: 0 20px;
+
+    /* Layout */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+
+  /*$$$$$                        /$$                           /$$    
+ /$$__  $$                      | $$                          | $$    
+| $$  \__/  /$$$$$$  /$$$$$$$  /$$$$$$    /$$$$$$  /$$$$$$$  /$$$$$$  
+| $$       /$$__  $$| $$__  $$|_  $$_/   /$$__  $$| $$__  $$|_  $$_/  
+| $$      | $$  \ $$| $$  \ $$  | $$    | $$$$$$$$| $$  \ $$  | $$    
+| $$    $$| $$  | $$| $$  | $$  | $$ /$$| $$_____/| $$  | $$  | $$ /$$
+|  $$$$$$/|  $$$$$$/| $$  | $$  |  $$$$/|  $$$$$$$| $$  | $$  |  $$$$/
+ \______/  \______/ |__/  |__/   \___/   \_______/|__/  |__/   \__*/
+
+/* Content container */
+#content {
+    /* Size */
+    flex: 1;
+    min-height: 100%;
+
+    /* Spacing */
+    margin-left: var(--sidebarSpacing);
+
+    /* Layout */
+    position: relative;
+}
+
+/* Page */
+.page {
+    /* Size */
+    width: 100%;
+    min-height: 100vh;
+
+    /* Spacing */
+    padding: 70px 12vw;
+
+    /* Layout */
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: calc(2 * var(--pageSpacing));
+}
+
+@media screen and (orientation:portrait) {
+    .page {
+        /* Spacing */
+        padding: 120px 5vw;
+    }
+}
