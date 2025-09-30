@@ -18,6 +18,7 @@ const locales = {
         sidebar: {
             home: 'Home',
             about: 'About Us',
+            team: 'Team',
             localization: 'English',
             theme: 'Theme',
         }
@@ -31,6 +32,7 @@ const locales = {
         sidebar: {
             home: 'Inicio',
             about: 'Nosotros',
+            team: 'Equipo',
             localization: 'Español',
             theme: 'Tema'
         }
@@ -65,14 +67,21 @@ class Sidebar {
     //Buttons
     #home = document.getElementById('sidebar-home');
     #about = document.getElementById('sidebar-about');
+    #team = document.getElementById('sidebar-team');
     #localization = document.getElementById('sidebar-localization');
     #theme = document.getElementById('sidebar-theme');
 
     localize = () => {
         this.#home.innerText = loc.sidebar.home;
         this.#about.innerText = loc.sidebar.about;
+        this.#team.innerText = loc.sidebar.team;
         this.#localization.innerText = loc.sidebar.localization;
         this.#theme.innerText = loc.sidebar.theme;
+    }
+
+    //Constructor
+    constructor() {
+        new CurrentPageIndicator(['home', 'about', 'team']);
     }
 
 }
@@ -80,8 +89,6 @@ class Sidebar {
 const sidebar = new Sidebar();
 
 //Navigation
-new CurrentPageIndicator(['home', 'about']);
-
 function goTo(id) {
     //Scroll to element
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });

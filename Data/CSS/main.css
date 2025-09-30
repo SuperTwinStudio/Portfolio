@@ -19,18 +19,33 @@ html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
 
-    /* Text */
-    --text: #f5f5f5;
-    --textFilter: brightness(0) invert(1);
-    --textAlt: #63666d;
-    --textAltFilter: brightness(0) saturate(100%) invert(35%) sepia(24%) saturate(606%) hue-rotate(181deg) brightness(92%) contrast(86%);
-    --link: #f32853;
-    --linkFilter: brightness(0) invert(29%) sepia(74%) saturate(2123%) hue-rotate(327deg) brightness(83%) contrast(111%);
-
     /* Layout */
-    --bg: #000000;
+    --bgLight: #e6e6d8;
+    --bgDark: #222220;
+    --bg: var(--bgDark);
+    
     --backdrop: rgba(0, 0, 0, 0.4);
     --hover: color-mix(in srgb, var(--textAlt) 25%, transparent);
+
+    /* Text */
+    --textLight: #000000;
+    --textDark: #f5f5f5;
+    --text: var(--textDark);
+
+    --textFilterLight: brightness(0);
+    --textFilterDark: brightness(0) invert(1);
+    --textFilter: var(--textFilterDark);
+
+    --textAltLight: #83868d;
+    --textAltDark: #63666d;
+    --textAlt: var(--textAltDark);
+
+    --textAltFilterLight: brightness(0) saturate(100%) invert(58%) sepia(24%) saturate(506%) hue-rotate(183deg) brightness(84%) contrast(87%);
+    --textAltFilterDark: brightness(0) saturate(100%) invert(35%) sepia(24%) saturate(606%) hue-rotate(181deg) brightness(92%) contrast(86%);
+    --textAltFilter: var(--textAltFilterDark);
+    
+    --link: #f32853;
+    --linkFilter: brightness(0) invert(29%) sepia(74%) saturate(2123%) hue-rotate(327deg) brightness(83%) contrast(111%);
 
     /* Borders */
     --borderTransparent: solid 1px transparent;
@@ -40,19 +55,14 @@ html {
 }
 
 html[light] {
-    /* Colors */
-    --bg: #f5f5f5;
-    --hover: rgba(0, 0, 0, 0.2);
-    --borderSoftThick: solid 2px var(--hover);
-    --backdrop: rgba(0, 0, 0, 0.4);
+    /* Layout */
+    --bg: var(--bgLight);
 
     /* Text */
-    --text: #000000;
-    --textFilter: brightness(0);
-    --textAlt: #83868d;
-    --textAltFilter: brightness(0) saturate(100%) invert(58%) sepia(24%) saturate(506%) hue-rotate(183deg) brightness(84%) contrast(87%);
-    --link: #f32853;
-    --linkFilter: brightness(0) invert(29%) sepia(74%) saturate(2123%) hue-rotate(327deg) brightness(83%) contrast(111%);
+    --text: var(--textLight);
+    --textFilter: var(--textFilterLight);
+    --textAlt: var(--textAltLight);
+    --textAltFilter: var(--textAltFilterLight);
 }
 
 body {
@@ -618,8 +628,6 @@ dialog:not(#snackbar)[open] {
 
 /* Page */
 .page {
-    --theme: var(--bg);
-
     /* Size */
     width: 100%;
     min-height: 100vh;
@@ -636,7 +644,18 @@ dialog:not(#snackbar)[open] {
     gap: calc(2 * var(--pageSpacing));
 
     /* Visuals */
-    background-color: var(--theme);
+    background-color: var(--bg);
+
+    /* Text */
+    color: var(--text);
+}
+
+.page[themed] {
+    --bg: #a78768;
+}
+
+html[light] .page[themed] {
+    --bg: #d6c3a6;
 }
 
 @media screen and (orientation:portrait) {
@@ -664,7 +683,7 @@ dialog:not(#snackbar)[open] {
     left: 0;
 
     /* Visuals */
-    fill: var(--theme);
+    fill: var(--bg);
 
     /* Other */
     translate: 0 calc(1px - 100%);
@@ -676,7 +695,93 @@ dialog:not(#snackbar)[open] {
         top: 100%;
 
         /* Other */
-        translate: 0;
+        translate: 0 -1px;
         scale: -1;
     }
 }
+
+
+
+ /*$   /$$
+| $$  | $$
+| $$  | $$  /$$$$$$  /$$$$$$/$$$$   /$$$$$$
+| $$$$$$$$ /$$__  $$| $$_  $$_  $$ /$$__  $$
+| $$__  $$| $$  \ $$| $$ \ $$ \ $$| $$$$$$$$
+| $$  | $$| $$  | $$| $$ | $$ | $$| $$_____/
+| $$  | $$|  $$$$$$/| $$ | $$ | $$|  $$$$$$$
+|__/  |__/ \______/ |__/ |__/ |__/ \______*/
+
+#home {
+    /* Layout */
+    align-items: center;
+    justify-content: center;
+
+    /* Visuals */
+    background-image: 
+        linear-gradient(#00000040 0%, #00000040 100%),
+        url(../Images/favicon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    /* Text */
+    color: var(--textDark);
+    text-shadow: 1px 1px 2px #000;
+}
+
+/* Logo */
+.homeLogo {
+    /* Size */
+    --size: min(50vw, 40vh);
+    width: var(--size);
+    height: var(--size);
+}
+
+/* Button */
+.homeButton {
+    /* Size */
+    --size: min(20vw, 15vh);
+    width: var(--size);
+    height: var(--size);
+
+    /* Layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Visuals */
+    background-color: var(--bg);
+    border-radius: var(--size);
+    clip-path: polygon(56% 2%, 76% 9%, 100% 42%, 86% 89%, 40% 97%, 5% 63%, 14% 18%);
+
+    /* Other */
+    cursor: pointer;
+    transition: background-color .1s;
+
+    /* Hover animation */
+    &:hover {
+        /* Visuals */
+        background-color: color-mix(in srgb, var(--bg) 80%, #000);
+    }
+}
+
+.homeButton > img {
+    /* Size */
+    width: calc(0.5 * var(--size));
+    height: calc(0.5 * var(--size));
+
+    /* Visuals */
+    filter: var(--textFilter);
+}
+
+
+
+  /*$$$$$  /$$                             /$$
+ /$$__  $$| $$                            | $$
+| $$  \ $$| $$$$$$$   /$$$$$$  /$$   /$$ /$$$$$$
+| $$$$$$$$| $$__  $$ /$$__  $$| $$  | $$|_  $$_/
+| $$__  $$| $$  \ $$| $$  \ $$| $$  | $$  | $$
+| $$  | $$| $$  | $$| $$  | $$| $$  | $$  | $$ /$$
+| $$  | $$| $$$$$$$/|  $$$$$$/|  $$$$$$/  |  $$$$/
+|__/  |__/|_______/  \______/  \______/    \__*/
+
