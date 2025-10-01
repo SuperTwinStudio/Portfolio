@@ -17,7 +17,7 @@ const locales = {
         //Sidebar
         sidebar: {
             home: 'Home',
-            about: 'About Us',
+            about: 'Our Game',
             team: 'Team',
             localization: 'English',
             theme: 'Theme',
@@ -31,7 +31,7 @@ const locales = {
         //Sidebar
         sidebar: {
             home: 'Inicio',
-            about: 'Nosotros',
+            about: 'Nuestro Juego',
             team: 'Equipo',
             localization: 'Español',
             theme: 'Tema'

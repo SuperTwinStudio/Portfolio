@@ -19,14 +19,6 @@ html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
 
-    /* Layout */
-    --bgLight: #e6e6d8;
-    --bgDark: #222220;
-    --bg: var(--bgDark);
-    
-    --backdrop: rgba(0, 0, 0, 0.4);
-    --hover: color-mix(in srgb, var(--textAlt) 25%, transparent);
-
     /* Text */
     --textLight: #000000;
     --textDark: #f5f5f5;
@@ -44,8 +36,20 @@ html {
     --textAltFilterDark: brightness(0) saturate(100%) invert(35%) sepia(24%) saturate(606%) hue-rotate(181deg) brightness(92%) contrast(86%);
     --textAltFilter: var(--textAltFilterDark);
     
+    --accentDark: #fea92b;
+    --accentLight: #fea92b;
+    --accent: var(--accentDark);
+
     --link: #f32853;
     --linkFilter: brightness(0) invert(29%) sepia(74%) saturate(2123%) hue-rotate(327deg) brightness(83%) contrast(111%);
+
+    /* Layout */
+    --bgLight: #e6e6d8;
+    --bgDark: #222220;
+    --bg: var(--bgDark);
+    
+    --backdrop: rgba(0, 0, 0, 0.4);
+    --hover: color-mix(in srgb, var(--textAlt) 25%, transparent);
 
     /* Borders */
     --borderTransparent: solid 1px transparent;
@@ -55,14 +59,15 @@ html {
 }
 
 html[light] {
-    /* Layout */
-    --bg: var(--bgLight);
-
     /* Text */
     --text: var(--textLight);
     --textFilter: var(--textFilterLight);
     --textAlt: var(--textAltLight);
     --textAltFilter: var(--textAltFilterLight);
+    --accent: var(--accentLight);
+
+    /* Layout */
+    --bg: var(--bgLight);
 }
 
 body {
@@ -630,7 +635,7 @@ dialog:not(#snackbar)[open] {
 .page {
     /* Size */
     width: 100%;
-    min-height: 100vh;
+    /*min-height: 100vh;*/
 
     /* Spacing */
     padding: 70px 12vw;
@@ -663,6 +668,13 @@ html[light] .page[themed] {
         /* Spacing */
         padding: 120px 5vw;
     }
+}
+
+/* Text */
+.pageTitle {
+    /* Text */
+    font-size: 2rem;
+    font-family: phonk;
 }
 
 /* Page ruptures */
@@ -712,6 +724,9 @@ html[light] .page[themed] {
 |__/  |__/ \______/ |__/ |__/ |__/ \______*/
 
 #home {
+    /* Home */
+    min-height: 100vh;
+
     /* Layout */
     align-items: center;
     justify-content: center;
@@ -737,10 +752,16 @@ html[light] .page[themed] {
     height: var(--size);
 }
 
-/* Button */
+/* Buttons */
+.homeButtons {
+    /* Layout */
+    display: flex;
+    gap: 20px;
+}
+
 .homeButton {
     /* Size */
-    --size: min(20vw, 15vh);
+    --size: min(20vw, 12vh);
     width: var(--size);
     height: var(--size);
 
@@ -750,7 +771,7 @@ html[light] .page[themed] {
     justify-content: center;
 
     /* Visuals */
-    background-color: var(--bg);
+    background-color: var(--accent);
     border-radius: var(--size);
     clip-path: polygon(56% 2%, 76% 9%, 100% 42%, 86% 89%, 40% 97%, 5% 63%, 14% 18%);
 
@@ -761,7 +782,7 @@ html[light] .page[themed] {
     /* Hover animation */
     &:hover {
         /* Visuals */
-        background-color: color-mix(in srgb, var(--bg) 80%, #000);
+        background-color: color-mix(in srgb, var(--accent) 80%, #000);
     }
 }
 

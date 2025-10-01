@@ -40,7 +40,7 @@
             </a>
             <a id="goTo-about" class="sidebarButton" onclick="goTo('about')">
                 <img src="Data/Images/Icons/about.webp">
-                <span id="sidebar-about">About</span>
+                <span id="sidebar-about">Our Game</span>
                 <indicator class="sidebarButtonIndicator"></indicator>
             </a>
             <a id="goTo-team" class="sidebarButton" onclick="goTo('team')">
@@ -77,7 +77,7 @@
 
     <div id="content">
 
-        <div id="home" class="page" themed>
+        <div id="home" class="page">
             <!-- Logo -->
             <img class="homeLogo" src="Data/Images/favicon.png">
             
@@ -85,9 +85,14 @@
             <span>Gurt: Yo</span>
             
             <!-- Button -->
-            <a class="homeButton" target="_blank" href="https://github.com/SuperTwinStudio">
-                <img src="Data/Images/Icons/play.svg">
-            </a>
+            <div class="homeButtons">
+                <a class="homeButton" target="_blank" href="https://github.com/SuperTwinStudio">
+                    <img src="Data/Images/Icons/play.svg">
+                </a>
+                <a class="homeButton" target="_blank" href="https://github.com/SuperTwinStudio">
+                    <img src="Data/Images/Icons/itchio.svg">
+                </a>
+            </div>
         </div>
 
         <div id="about" class="page" themed>
@@ -97,7 +102,14 @@
             </svg>
 
             <!-- Content -->
-            Yo: Whats up
+            <div class="pageTitle">Our Game</div>
+            <span>
+                Gurt: Yo
+                <br>
+                Yo: Whats up
+                <br>
+                Evil Gurt: sybau twin
+            </span>
             
             <!-- Rupture -->
             <svg class="rupture" reverse viewBox="0 0 1158.5 27.5" xmlns="http://www.w3.org/2000/svg">
@@ -106,7 +118,7 @@
         </div>
 
         <div id="team" class="page">
-            We are these people
+            <span>We are these people</span>
         </div>
 
     </div>
