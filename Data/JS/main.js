@@ -18,9 +18,21 @@ const locales = {
         sidebar: {
             home: 'Home',
             about: 'Our Game',
-            team: 'Team',
-            localization: 'English',
-            theme: 'Theme',
+            team: 'Our Team',
+            localization: 'English'
+        },
+        //About
+        about: {
+            features: 'Features'
+        },
+        //Team
+        team: {
+            buddy1: 'Programmer',
+            buddy2: 'Programmer',
+            buddy3: '3D Artist',
+            buddy5: '2D Artist',
+            buddy4: 'Concept Artist',
+            buddy6: 'IDK'
         }
     }, 
     es: {
@@ -32,9 +44,21 @@ const locales = {
         sidebar: {
             home: 'Inicio',
             about: 'Nuestro Juego',
-            team: 'Equipo',
-            localization: 'Español',
-            theme: 'Tema'
+            team: 'Nuestro Equipo',
+            localization: 'Español'
+        },
+        //About
+        about: {
+            features: 'Características'
+        },
+        //Team
+        team: {
+            buddy1: 'Programador',
+            buddy2: 'Programador',
+            buddy3: 'Artista 3D',
+            buddy5: 'Artista 2D',
+            buddy4: 'Artista de Concept',
+            buddy6: 'IDK'
         }
     }
 }
@@ -64,24 +88,21 @@ class Sidebar {
         }
     }
 
-    //Buttons
+    //State
     #home = document.getElementById('sidebar-home');
     #about = document.getElementById('sidebar-about');
     #team = document.getElementById('sidebar-team');
     #localization = document.getElementById('sidebar-localization');
-    #theme = document.getElementById('sidebar-theme');
+
+    constructor() {
+        new CurrentPageIndicator(['home', 'about', 'team']);
+    }
 
     localize = () => {
         this.#home.innerText = loc.sidebar.home;
         this.#about.innerText = loc.sidebar.about;
         this.#team.innerText = loc.sidebar.team;
         this.#localization.innerText = loc.sidebar.localization;
-        this.#theme.innerText = loc.sidebar.theme;
-    }
-
-    //Constructor
-    constructor() {
-        new CurrentPageIndicator(['home', 'about', 'team']);
     }
 
 }
@@ -97,6 +118,150 @@ function goTo(id) {
     sidebar.toggle(false);
 }
 
+
+
+ /*$   /$$                                  
+| $$  | $$                                  
+| $$  | $$  /$$$$$$  /$$$$$$/$$$$   /$$$$$$ 
+| $$$$$$$$ /$$__  $$| $$_  $$_  $$ /$$__  $$
+| $$__  $$| $$  \ $$| $$ \ $$ \ $$| $$$$$$$$
+| $$  | $$| $$  | $$| $$ | $$ | $$| $$_____/
+| $$  | $$|  $$$$$$/| $$ | $$ | $$|  $$$$$$$
+|__/  |__/ \______/ |__/ |__/ |__/ \______*/
+
+class Home {
+
+    //State
+    #title = document.getElementById('homeTitle');
+
+    constructor() {
+        
+    }
+
+    localize = () => {
+        this.#title.innerText = loc.sidebar.home;
+    }
+
+}
+
+const home = new Home();
+
+
+
+  /*$$$$$  /$$                             /$$
+ /$$__  $$| $$                            | $$
+| $$  \ $$| $$$$$$$   /$$$$$$  /$$   /$$ /$$$$$$
+| $$$$$$$$| $$__  $$ /$$__  $$| $$  | $$|_  $$_/
+| $$__  $$| $$  \ $$| $$  \ $$| $$  | $$  | $$
+| $$  | $$| $$  | $$| $$  | $$| $$  | $$  | $$ /$$
+| $$  | $$| $$$$$$$/|  $$$$$$/|  $$$$$$/  |  $$$$/
+|__/  |__/|_______/  \______/  \______/    \__*/
+
+class About {
+
+    //Buddies
+    buddies = [
+        {
+            idx: 1,
+            img: 'Data/Images/favicon.png',
+            name: 'Alex',
+            desc: undefined
+        },
+        {
+            idx: 2,
+            img: 'Data/Images/favicon.png',
+            name: 'Raúl',
+            desc: undefined
+        },
+        {
+            idx: 3,
+            img: 'Data/Images/favicon.png',
+            name: 'Pablo',
+            desc: undefined
+        },
+        {
+            idx: 4,
+            img: 'Data/Images/favicon.png',
+            name: 'Mar',
+            desc: undefined
+        },
+        {
+            idx: 5,
+            img: 'Data/Images/favicon.png',
+            name: 'Sara',
+            desc: undefined
+        },
+        {
+            idx: 6,
+            img: 'Data/Images/favicon.png',
+            name: 'Carlos',
+            desc: undefined
+        }
+    ]
+
+    eachbuddy(fun) {
+        for (let i = 1; i <= this.buddies.length; i++) fun(this.buddies[i], i);
+    }
+
+    //State
+    #title = document.getElementById('aboutTitle');
+    #features = document.getElementById('aboutFeatures');
+
+    constructor() {
+        //Shuffle buddies
+        Util.shuffleArray(this.buddies);
+
+        //Apply info to buddies
+        this.eachbuddy((buddy, index) => {
+            const img = document.getElementById(`teamBuddy${index}-img`);
+            const name = document.getElementById(`teamBuddy${index}-name`);
+            const desc = document.getElementById(`teamBuddy${index}-desc`);
+
+            //buddy.desc = desc;
+
+            img.src = buddy.img;
+            name.innerText = buddy.name;
+        });
+    }
+
+    localize = () => {
+        this.#title.innerText = loc.sidebar.about;
+        this.#features.innerText = loc.about.features;
+        /*this.eachbuddy((buddy, index) => {
+            buddy.desc.innerText = loc.team[`buddy${buddy.idx}`]
+        });*/
+    }
+
+}
+
+const about = new About();
+
+
+ /*$$$$$$$
+|__  $$__/
+   | $$  /$$$$$$   /$$$$$$  /$$$$$$/$$$$
+   | $$ /$$__  $$ |____  $$| $$_  $$_  $$
+   | $$| $$$$$$$$  /$$$$$$$| $$ \ $$ \ $$
+   | $$| $$_____/ /$$__  $$| $$ | $$ | $$
+   | $$|  $$$$$$$|  $$$$$$$| $$ | $$ | $$
+   |__/ \_______/ \_______/|__/ |__/ |_*/
+
+class Team {
+
+    //State
+    #title = document.getElementById('teamTitle');
+
+    constructor() {
+        
+    }
+
+    localize = () => {
+        this.#title.innerText = loc.sidebar.team;
+    }
+
+}
+
+const team = new Team();
 
 
  /*$                                     /$$ /$$                       /$$     /$$                    
@@ -150,48 +315,11 @@ function swapLocale() {
 function localize() {
     //Sidebar
     sidebar.localize();
+
+    //Pages
+    home.localize();
+    about.localize();
+    team.localize();
 }
 
 localize()
-
-
-
- /*$$$$$$$ /$$                                        
-|__  $$__/| $$                                        
-   | $$   | $$$$$$$   /$$$$$$  /$$$$$$/$$$$   /$$$$$$ 
-   | $$   | $$__  $$ /$$__  $$| $$_  $$_  $$ /$$__  $$
-   | $$   | $$  \ $$| $$$$$$$$| $$ \ $$ \ $$| $$$$$$$$
-   | $$   | $$  | $$| $$_____/| $$ | $$ | $$| $$_____/
-   | $$   | $$  | $$|  $$$$$$$| $$ | $$ | $$|  $$$$$$$
-   |__/   |__/  |__/ \_______/|__/ |__/ |__/ \______*/
-
-const theme = {
-    dark: (DB.get('theme', 'dark', DB.STRING) == 'dark')
-}
-
-function toggleTheme() {
-    //Toggle theme
-    theme.dark = !theme.dark;
-    loadTheme();
-
-    //Close sidebar
-    sidebar.toggle();
-
-    //Give chievement
-    if (theme.dark) achievements.give(Achievement.theme);
-}
-
-function loadTheme() {
-    //Load theme
-    if (theme.dark) {
-        //Enable light
-        DB.set('theme', 'dark', DB.STRING);
-        document.documentElement.removeAttribute('light');
-    } else {
-        //Enable dark
-        DB.set('theme', 'light', DB.STRING);
-        document.documentElement.setAttribute('light', '');
-    }
-}
-
-loadTheme()

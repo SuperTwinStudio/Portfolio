@@ -12,7 +12,8 @@ html {
 
     /* Text */
     font-family: geist;
-    font-size: 16px;
+    font-size: 17px;
+    font-weight: 500;
     user-select: none;
 
     /* Other */
@@ -20,34 +21,16 @@ html {
     -webkit-tap-highlight-color: transparent;
 
     /* Text */
-    --textLight: #000000;
-    --textDark: #f5f5f5;
-    --text: var(--textDark);
-
-    --textFilterLight: brightness(0);
-    --textFilterDark: brightness(0) invert(1);
-    --textFilter: var(--textFilterDark);
-
-    --textAltLight: #83868d;
-    --textAltDark: #63666d;
-    --textAlt: var(--textAltDark);
-
-    --textAltFilterLight: brightness(0) saturate(100%) invert(58%) sepia(24%) saturate(506%) hue-rotate(183deg) brightness(84%) contrast(87%);
-    --textAltFilterDark: brightness(0) saturate(100%) invert(35%) sepia(24%) saturate(606%) hue-rotate(181deg) brightness(92%) contrast(86%);
-    --textAltFilter: var(--textAltFilterDark);
-    
-    --accentDark: #fea92b;
-    --accentLight: #fea92b;
-    --accent: var(--accentDark);
-
+    --text: #000000;
+    --textFilter: brightness(0);
+    --textAlt: #83868d;
+    --textAltFilter: brightness(0) saturate(100%) invert(58%) sepia(24%) saturate(506%) hue-rotate(183deg) brightness(84%) contrast(87%);
+    --accent: #fea92b;
     --link: #f32853;
     --linkFilter: brightness(0) invert(29%) sepia(74%) saturate(2123%) hue-rotate(327deg) brightness(83%) contrast(111%);
 
     /* Layout */
-    --bgLight: #e6e6d8;
-    --bgDark: #222220;
-    --bg: var(--bgDark);
-    
+    --bg: #e6e6d8;
     --backdrop: rgba(0, 0, 0, 0.4);
     --hover: color-mix(in srgb, var(--textAlt) 25%, transparent);
 
@@ -56,18 +39,6 @@ html {
     --border: solid 1px var(--text);
     --borderSoft: solid 1px var(--hover);
     --borderSoftThick: solid 2px var(--hover);
-}
-
-html[light] {
-    /* Text */
-    --text: var(--textLight);
-    --textFilter: var(--textFilterLight);
-    --textAlt: var(--textAltLight);
-    --textAltFilter: var(--textAltFilterLight);
-    --accent: var(--accentLight);
-
-    /* Layout */
-    --bg: var(--bgLight);
 }
 
 body {
@@ -127,6 +98,45 @@ a {
 a:not([class])[href] {
     /* Visuals */
     color: var(--link);
+}
+
+/* Lists */
+ul {
+    /* Spacing */
+    margin: 0;
+    padding: 0;
+
+    /* Visuals */
+    list-style-type: none;
+}
+
+li {
+    /* Size */
+    min-height: 30px;
+
+    /* Padding */
+    padding-left: 25px;
+
+    /* Layout */
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+li::before {
+    content: '';
+
+    /* Size */
+    width: 12px;
+    height: 12px;
+
+    /* Layout */
+    position: absolute;
+    left: 0;
+    
+    /* Visuals */
+    background-color: var(--accent);
+    border-radius: 20px;
 }
 
 /* Scrollbar */
@@ -656,17 +666,14 @@ dialog:not(#snackbar)[open] {
 }
 
 .page[themed] {
-    --bg: #a78768;
-}
-
-html[light] .page[themed] {
-    --bg: #d6c3a6;
+    --bg: #c8a662;
+    --accent: #4c2910;
 }
 
 @media screen and (orientation:portrait) {
     .page {
         /* Spacing */
-        padding: 120px 5vw;
+        padding: 120px 7vw;
     }
 }
 
@@ -675,6 +682,7 @@ html[light] .page[themed] {
     /* Text */
     font-size: 2rem;
     font-family: phonk;
+    color: var(--accent);
 }
 
 /* Page ruptures */
@@ -740,7 +748,7 @@ html[light] .page[themed] {
     background-size: cover;
 
     /* Text */
-    color: var(--textDark);
+    color: #f5f5f5;
     text-shadow: 1px 1px 2px #000;
 }
 
@@ -806,3 +814,109 @@ html[light] .page[themed] {
 | $$  | $$| $$$$$$$/|  $$$$$$/|  $$$$$$/  |  $$$$/
 |__/  |__/|_______/  \______/  \______/    \__*/
 
+#about {
+    /* Layout */
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+@media screen and (orientation:portrait) {
+    #about {
+        /* Layout */
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.aboutContent {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
+ /*$$$$$$$
+|__  $$__/
+   | $$  /$$$$$$   /$$$$$$  /$$$$$$/$$$$
+   | $$ /$$__  $$ |____  $$| $$_  $$_  $$
+   | $$| $$$$$$$$  /$$$$$$$| $$ \ $$ \ $$
+   | $$| $$_____/ /$$__  $$| $$ | $$ | $$
+   | $$|  $$$$$$$|  $$$$$$$| $$ | $$ | $$
+   |__/ \_______/ \_______/|__/ |__/ |_*/
+
+#team {
+    /* Spacing */
+    margin: 40px 0 70px 0;
+}
+
+.teamContent {
+    /* Layout */
+    display: grid;
+    flex: 1;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+}
+
+@media screen and (orientation:portrait) {
+    .teamContent {
+        /* Layout */
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+}
+
+/* Buddy */
+.teamBuddy {
+    /* Size */
+    min-width: 0;
+
+    /* Layout */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.teamBuddy > img {
+    /* Size */
+    width: 90%;
+    aspect-ratio: 1;
+
+    /* Visuals */
+    border-radius: 50%;
+}
+
+.teamBuddy > div {
+    /* Size */
+    width: 100%;
+
+    /* Spacing */
+    padding: 20px;
+    margin-top: -40px;
+
+    /* Layout */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    /* Visuals */
+    background-color: #c8a662;
+    border-radius: 20px;
+
+    /* Text */
+    text-align: center;
+}
+
+.teamBuddy > div > span:nth-of-type(1) {
+    /* Text */
+    font-weight: bold;
+}
+
+.teamBuddy > div > span:nth-of-type(2) {
+    /* Text */
+    font-size: 0.8rem;
+}

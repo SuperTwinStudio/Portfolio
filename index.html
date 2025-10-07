@@ -39,13 +39,13 @@
                 <indicator class="sidebarButtonIndicator"></indicator>
             </a>
             <a id="goTo-about" class="sidebarButton" onclick="goTo('about')">
-                <img src="Data/Images/Icons/about.webp">
+                <img src="Data/Images/Icons/game.webp">
                 <span id="sidebar-about">Our Game</span>
                 <indicator class="sidebarButtonIndicator"></indicator>
             </a>
             <a id="goTo-team" class="sidebarButton" onclick="goTo('team')">
                 <img src="Data/Images/Icons/about.webp">
-                <span id="sidebar-team">Team</span>
+                <span id="sidebar-team">Our Team</span>
                 <indicator class="sidebarButtonIndicator"></indicator>
             </a>
 
@@ -56,10 +56,6 @@
             <a class="sidebarButton" onclick="swapLocale()">
                 <img src="Data/Images/Icons/language.webp">
                 <span id="sidebar-localization">Language</span>
-            </a>
-            <a class="sidebarButton" onclick="toggleTheme()">
-                <img src="Data/Images/Icons/theme.webp">
-                <span id="sidebar-theme">Theme</span>
             </a>
         </div>
     </div>
@@ -76,13 +72,13 @@
      \______/  \______/ |__/  |__/   \___/   \_______/|__/  |__/   \_-->
 
     <div id="content">
-
+        <!-- Home -->
         <div id="home" class="page">
             <!-- Logo -->
-            <img class="homeLogo" src="Data/Images/favicon.png">
+            <img id="homeTitle" class="homeLogo" src="Data/Images/favicon.png">
             
             <!-- Small description -->
-            <span>Gurt: Yo</span>
+            <span>Very very cool game!</span>
             
             <!-- Button -->
             <div class="homeButtons">
@@ -95,21 +91,43 @@
             </div>
         </div>
 
+        <!-- Our Game -->
         <div id="about" class="page" themed>
             <!-- Rupture -->
             <svg class="rupture" viewBox="0 0 1158.5 27.5" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1158.5 27.5H0V18.5L50.5 8.5L95.5 13L229.5 8.5L480.5 13.5L561 8.5L602 13.5L623 0L794 8.5L876 18.5L942 8.5L1158.5 18.5V27.5Z"/>
             </svg>
 
-            <!-- Content -->
-            <div class="pageTitle">Our Game</div>
-            <span>
-                Gurt: Yo
-                <br>
-                Yo: Whats up
-                <br>
-                Evil Gurt: sybau twin
-            </span>
+            <!-- Column 1 -->
+            <div class="aboutContent" style="flex: 1;">
+                <!-- Title -->
+                <div id="aboutTitle" class="pageTitle">Our Game!</div>
+
+                <!-- Content -->
+                <span>
+                    The Hog Rider is a Rare card that is unlocked from the Builder's Workshop (Arena 5). 
+                    It spawns a fast, single-target, building-targeting, melee, ground troop with high hitpoints and high damage. 
+                    <br><br>
+                    He is able to jump over the river. 
+                    He appears as a dark-skinned shirtless man with blue eyes, dark brown eyebrows, beard and mohawk, and a golden body piercing in his left ear, wearing a team-colored belt and wristbands, along with a brown loincloth and sandals. 
+                    <br><br>
+                    He wields a hammer with two brass-colored bands and a team-colored ribbon tied at the bottom, and is riding a hog. 
+                    A Hog Rider card costs 4 Elixir to deploy.
+                </span>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="aboutContent">
+                <!-- Title -->
+                <div id="aboutFeatures" class="pageTitle">Features</div>
+
+                <!-- Content -->
+                <ul>
+                    <li>Gurt: Yo</li>
+                    <li>Yo: Whats up</li>
+                    <li>Evil Gurt: sybau twin</li>
+                </ul>
+            </div>
             
             <!-- Rupture -->
             <svg class="rupture" reverse viewBox="0 0 1158.5 27.5" xmlns="http://www.w3.org/2000/svg">
@@ -117,10 +135,82 @@
             </svg>
         </div>
 
+        <!-- Our Team -->
         <div id="team" class="page">
-            <span>We are these people</span>
+            <!-- Title -->
+            <div id="teamTitle" class="pageTitle">Our Team</div>
+            
+            <!-- Content -->
+            <div class="teamContent">
+                <!-- Buddy 1 -->
+                <div class="teamBuddy">
+                    <img id="teamBuddy1-img" src="Data/Images/favicon.png">
+                    <div>
+                        <span id="teamBuddy1-name">Buddy Gurt</span>
+                        <span id="teamBuddy1-desc">Nigga Programmer</span>
+                    </div>
+                </div>
+                
+                <!-- Buddy 2 -->
+                <div class="teamBuddy">
+                    <img id="teamBuddy2-img" src="Data/Images/favicon.png">
+                    <div>
+                        <span id="teamBuddy2-name">Buddy Gurt</span>
+                        <span id="teamBuddy2-desc">Nigga Programmer</span>
+                    </div>
+                </div>
+                
+                <!-- Buddy 3 -->
+                <div class="teamBuddy">
+                    <img id="teamBuddy3-img" src="Data/Images/favicon.png">
+                    <div>
+                        <span id="teamBuddy3-name">Buddy Gurt</span>
+                        <span id="teamBuddy3-desc">Nigga Programmer</span>
+                    </div>
+                </div>
+                
+                <!-- Buddy 4 -->
+                <div class="teamBuddy">
+                    <img id="teamBuddy4-img" src="Data/Images/favicon.png">
+                    <div>
+                        <span id="teamBuddy4-name">Buddy Gurt</span>
+                        <span id="teamBuddy4-desc">Nigga Programmer</span>
+                    </div>
+                </div>
+                
+                <!-- Buddy 5 -->
+                <div class="teamBuddy">
+                    <img id="teamBuddy5-img" src="Data/Images/favicon.png">
+                    <div>
+                        <span id="teamBuddy5-name">Buddy Gurt</span>
+                        <span id="teamBuddy5-desc">Nigga Programmer</span>
+                    </div>
+                </div>
+                
+                <!-- Buddy 6 -->
+                <div class="teamBuddy">
+                    <img id="teamBuddy6-img" src="Data/Images/favicon.png">
+                    <div>
+                        <span id="teamBuddy6-name">Buddy Gurt</span>
+                        <span id="teamBuddy6-desc">Nigga Programmer</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
+        <!-- Footer -->
+        <div id="footer" class="page" themed>
+            <!-- Rupture -->
+            <svg class="rupture" viewBox="0 0 1158.5 27.5" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1158.5 27.5H0V18.5L50.5 8.5L95.5 13L229.5 8.5L480.5 13.5L561 8.5L602 13.5L623 0L794 8.5L876 18.5L942 8.5L1158.5 18.5V27.5Z"/>
+            </svg>
+
+            <!-- Title -->
+            <div class="pageTitle">Meow</div>
+
+            <!-- Content -->
+            Meow
+        </div>
     </div>
 </body>
 
