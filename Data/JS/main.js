@@ -30,9 +30,9 @@ const locales = {
             buddy1: 'Programmer',
             buddy2: 'Programmer',
             buddy3: '3D Artist',
-            buddy5: '2D Artist',
-            buddy4: 'Concept Artist',
-            buddy6: 'IDK'
+            buddy4: '2D Artist',
+            buddy5: 'Concept Artist',
+            buddy6: 'Aditional Support'
         }
     }, 
     es: {
@@ -56,9 +56,9 @@ const locales = {
             buddy1: 'Programador',
             buddy2: 'Programador',
             buddy3: 'Artista 3D',
-            buddy5: 'Artista 2D',
-            buddy4: 'Artista de Concept',
-            buddy6: 'IDK'
+            buddy4: 'Artista 2D',
+            buddy5: 'Artista de Concept',
+            buddy6: 'Soporte Adicional'
         }
     }
 }
@@ -159,77 +159,13 @@ const home = new Home();
 
 class About {
 
-    //Buddies
-    buddies = [
-        {
-            idx: 1,
-            img: 'Data/Images/favicon.png',
-            name: 'Alex',
-            desc: undefined
-        },
-        {
-            idx: 2,
-            img: 'Data/Images/favicon.png',
-            name: 'Raúl',
-            desc: undefined
-        },
-        {
-            idx: 3,
-            img: 'Data/Images/favicon.png',
-            name: 'Pablo',
-            desc: undefined
-        },
-        {
-            idx: 4,
-            img: 'Data/Images/favicon.png',
-            name: 'Mar',
-            desc: undefined
-        },
-        {
-            idx: 5,
-            img: 'Data/Images/favicon.png',
-            name: 'Sara',
-            desc: undefined
-        },
-        {
-            idx: 6,
-            img: 'Data/Images/favicon.png',
-            name: 'Carlos',
-            desc: undefined
-        }
-    ]
-
-    eachbuddy(fun) {
-        for (let i = 1; i <= this.buddies.length; i++) fun(this.buddies[i], i);
-    }
-
     //State
     #title = document.getElementById('aboutTitle');
     #features = document.getElementById('aboutFeatures');
 
-    constructor() {
-        //Shuffle buddies
-        Util.shuffleArray(this.buddies);
-
-        //Apply info to buddies
-        this.eachbuddy((buddy, index) => {
-            const img = document.getElementById(`teamBuddy${index}-img`);
-            const name = document.getElementById(`teamBuddy${index}-name`);
-            const desc = document.getElementById(`teamBuddy${index}-desc`);
-
-            //buddy.desc = desc;
-
-            img.src = buddy.img;
-            name.innerText = buddy.name;
-        });
-    }
-
     localize = () => {
         this.#title.innerText = loc.sidebar.about;
         this.#features.innerText = loc.about.features;
-        /*this.eachbuddy((buddy, index) => {
-            buddy.desc.innerText = loc.team[`buddy${buddy.idx}`]
-        });*/
     }
 
 }
@@ -248,15 +184,67 @@ const about = new About();
 
 class Team {
 
+    //Buddies
+    buddies = [
+        {
+            idx: 1,
+            img: 'Data/Images/favicon.png',
+            name: 'Alex'
+        },
+        {
+            idx: 2,
+            img: 'Data/Images/favicon.png',
+            name: 'Raúl'
+        },
+        {
+            idx: 3,
+            img: 'Data/Images/favicon.png',
+            name: 'Pablo'
+        },
+        {
+            idx: 4,
+            img: 'Data/Images/favicon.png',
+            name: 'Mar'
+        },
+        {
+            idx: 5,
+            img: 'Data/Images/favicon.png',
+            name: 'Sara'
+        },
+        {
+            idx: 6,
+            img: 'Data/Images/favicon.png',
+            name: 'Carlos'
+        }
+    ]
+
+    eachbuddy(fun) {
+        for (let i = 1; i <= this.buddies.length; i++) fun(this.buddies[i - 1], i);
+    }
+
     //State
     #title = document.getElementById('teamTitle');
 
     constructor() {
-        
+        //Shuffle buddies
+        Util.shuffleArray(this.buddies);
+
+        //Apply info to buddies
+        this.eachbuddy((buddy, index) => {
+            const img = document.getElementById(`teamBuddy${index}-img`);
+            const name = document.getElementById(`teamBuddy${index}-name`);
+
+            img.src = buddy.img;
+            name.innerText = buddy.name;
+        });
     }
 
     localize = () => {
         this.#title.innerText = loc.sidebar.team;
+        this.eachbuddy((buddy, index) => {
+            const desc = document.getElementById(`teamBuddy${index}-desc`);
+            desc.innerText = loc.team[`buddy${buddy.idx}`]
+        });
     }
 
 }

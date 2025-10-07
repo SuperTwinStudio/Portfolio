@@ -773,7 +773,11 @@ dialog:not(#snackbar)[open] {
     width: var(--size);
     height: var(--size);
 
+    /* Spacing */
+    padding-left: calc(0.025 * var(--size)); /* Button shape is a bit off to the right */
+
     /* Layout */
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -796,8 +800,8 @@ dialog:not(#snackbar)[open] {
 
 .homeButton > img {
     /* Size */
-    width: calc(0.5 * var(--size));
-    height: calc(0.5 * var(--size));
+    width: calc(0.4 * var(--size));
+    height: calc(0.4 * var(--size));
 
     /* Visuals */
     filter: var(--textFilter);
