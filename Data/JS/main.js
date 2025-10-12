@@ -21,9 +21,23 @@ const locales = {
             team: 'Our Team',
             localization: 'English'
         },
+        //Home
+        home: {
+            description: 'Very very cool game!',
+        },
         //About
         about: {
-            features: 'Features'
+            features: 'Features',
+            feature: [
+                'Procedural dungeon generation',
+                'Multiple weapons to choose from',
+                'Different enemies and bosses to combat'
+            ],
+            content: `Hayashi is a kingdom whose inhabitants are made of a special type of paper that gives them character. 
+                The kingdom is kept safe by ancient magical scrolls that maintain order. 
+                The balance of Hayashi is threatened when the Cult of the Flame breaks down the great gate and breaks into the village to steal the scrolls and kidnap Prince Kami, Washi's brother, to use him as a vessel to resurrect Akarigami, a fearsome deity intent on destroying the world.
+                <br><br>
+                Players will accompany little Washi, an origami warrior whose goal is to free his brother from the clutches of the cult and recover the sacred scrolls to restore order to the kingdom and seal Akarigami away.`
         },
         //Team
         team: {
@@ -32,7 +46,11 @@ const locales = {
             buddy3: '3D Artist',
             buddy4: '2D Artist',
             buddy5: 'Concept Artist',
-            buddy6: 'Aditional Support'
+            buddy6: 'Programmer'
+        },
+        //Footer
+        footer: {
+            title: "Contact"
         }
     }, 
     es: {
@@ -47,9 +65,23 @@ const locales = {
             team: 'Nuestro Equipo',
             localization: 'Español'
         },
+        //Home
+        home: {
+            description: '¡Jueguito muy chulito!',
+        },
         //About
         about: {
-            features: 'Características'
+            features: 'Características',
+            feature: [
+                'Generación procedimental de mazmorras',
+                'Multiples armas para elegir',
+                'Diferentes enemigos y jefes para combatir'
+            ],
+            content: `Hayashi es un reino cuyos habitantes están hechos de un tipo de papel especial que les otorga carácter. 
+                El reino se mantiene a salvo gracias a unos ancestrales papiros mágicos que mantienen el orden. 
+                El equilibrio de Hayashi se ve amenazado cuando el Culto de la Llama quebranta la gran puerta e irrumpe en el pueblo para robar los papiros y secuestrar al príncipe Kami, hermano de Washi, para emplearlo como receptáculo y resucitar a Akarigami, una deidad temible que pretende destruir el mundo. 
+                <br><br>
+                Los jugadores acompañarán al pequeño Washi, un guerrero origami cuyo objetivo es liberar a su hermano de las garras del culto y recuperar los papiros sagrados para devolver el orden al reino y sellar a Akarigami.`
         },
         //Team
         team: {
@@ -58,7 +90,11 @@ const locales = {
             buddy3: 'Artista 3D',
             buddy4: 'Artista 2D',
             buddy5: 'Artista de Concept',
-            buddy6: 'Soporte Adicional'
+            buddy6: 'Programmer'
+        },
+        //Footer
+        footer: {
+            title: "Contacto"
         }
     }
 }
@@ -132,14 +168,12 @@ function goTo(id) {
 class Home {
 
     //State
-    #title = document.getElementById('homeTitle');
+    #description = document.getElementById('homeDescription');
 
-    constructor() {
-        
-    }
+    constructor() {}
 
     localize = () => {
-        this.#title.innerText = loc.sidebar.home;
+        this.#description.innerText = loc.home.description;
     }
 
 }
@@ -161,11 +195,18 @@ class About {
 
     //State
     #title = document.getElementById('aboutTitle');
+    #content = document.getElementById('aboutContent');
     #features = document.getElementById('aboutFeatures');
 
     localize = () => {
         this.#title.innerText = loc.sidebar.about;
+        this.#content.innerHTML = loc.about.content;
         this.#features.innerText = loc.about.features;
+        for (let i = 0; i < loc.about.feature.length; i++) {
+            const element = document.getElementById(`aboutFeature${i}`);
+            const feature = loc.about.feature[i];
+            element.innerText = feature;
+        }
     }
 
 }
@@ -188,18 +229,18 @@ class Team {
     buddies = [
         {
             idx: 1,
-            img: 'Data/Images/favicon.png',
+            img: 'Data/Images/Team/alex.webp',
             name: 'Alex'
         },
         {
             idx: 2,
             img: 'Data/Images/favicon.png',
-            name: 'Raúl'
+            name: 'Pablo'
         },
         {
             idx: 3,
-            img: 'Data/Images/favicon.png',
-            name: 'Pablo'
+            img: 'Data/Images/Team/raul.webp',
+            name: 'Raúl'
         },
         {
             idx: 4,
@@ -208,7 +249,7 @@ class Team {
         },
         {
             idx: 5,
-            img: 'Data/Images/favicon.png',
+            img: 'Data/Images/Team/sara.webp',
             name: 'Sara'
         },
         {
@@ -250,6 +291,31 @@ class Team {
 }
 
 const team = new Team();
+
+
+ /*$$$$$$$
+|__  $$__/
+   | $$  /$$$$$$   /$$$$$$  /$$$$$$/$$$$
+   | $$ /$$__  $$ |____  $$| $$_  $$_  $$
+   | $$| $$$$$$$$  /$$$$$$$| $$ \ $$ \ $$
+   | $$| $$_____/ /$$__  $$| $$ | $$ | $$
+   | $$|  $$$$$$$|  $$$$$$$| $$ | $$ | $$
+   |__/ \_______/ \_______/|__/ |__/ |_*/
+
+class Footer {
+
+    //State
+    #title = document.getElementById('footerTitle');
+
+    constructor() {}
+
+    localize = () => {
+        this.#title.innerText = loc.footer.title;
+    }
+
+}
+
+const footer = new Footer();
 
 
  /*$                                     /$$ /$$                       /$$     /$$                    
@@ -308,6 +374,7 @@ function localize() {
     home.localize();
     about.localize();
     team.localize();
+    footer.localize();
 }
 
 localize()

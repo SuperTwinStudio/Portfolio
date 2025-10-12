@@ -75,24 +75,16 @@
         <!-- Home -->
         <div id="home" class="page">
             <!-- Logo -->
-            <img id="homeTitle" class="homeLogo" src="Data/Images/favicon.png">
+            <img class="homeLogo" src="Data/Images/favicon.png">
             
             <!-- Small description -->
-            <span>Very very cool game!</span>
+            <span id="homeDescription">Very very cool game!</span>
             
             <!-- Buttons -->
             <div class="homeButtons">
                 <a class="homeButton" target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
                     <img src="Data/Images/Icons/play.svg">
                 </a>
-                <a class="homeButton" target="_blank" href="https://github.com/SuperTwinStudio">
-                    <img src="Data/Images/Icons/github.svg">
-                </a>
-                <!--
-                <a class="homeButton" target="_blank" href="https://github.com/SuperTwinStudio">
-                    <img src="Data/Images/Icons/itchio.svg">
-                </a>
-                -->
             </div>
         </div>
 
@@ -109,7 +101,7 @@
                 <div id="aboutTitle" class="pageTitle">Our Game!</div>
 
                 <!-- Content -->
-                <span>
+                <span id="aboutContent">
                     The Hog Rider is a Rare card that is unlocked from the Builder's Workshop (Arena 5). 
                     It spawns a fast, single-target, building-targeting, melee, ground troop with high hitpoints and high damage. 
                     <br><br>
@@ -128,9 +120,9 @@
 
                 <!-- Content -->
                 <ul>
-                    <li>Gurt: Yo</li>
-                    <li>Yo: Whats up</li>
-                    <li>Evil Gurt: sybau twin</li>
+                    <li id="aboutFeature0">Procedural dungeon generation</li>
+                    <li id="aboutFeature1">Multiple weapons to choose from</li>
+                    <li id="aboutFeature2">Different enemies and bosses</li>
                 </ul>
             </div>
             
@@ -211,10 +203,19 @@
             </svg>
 
             <!-- Title -->
-            <div class="pageTitle">Meow</div>
+            <div id="footerTitle" class="pageTitle">Contact</div>
 
             <!-- Content -->
-            Meow
+            <div class="footerButtons">
+                <!-- Mail -->
+                <a class="footerButton" href="mailto:super.twin.studio@gmail.com">
+                    <img src="Data/Images/Icons/email.svg">
+                </a>
+                <!-- GitHub -->
+                <a class="footerButton" target="_blank" href="https://github.com/SuperTwinStudio">
+                    <img src="Data/Images/Icons/github.svg">
+                </a>
+            </div>
         </div>
     </div>
 </body>
