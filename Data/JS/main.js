@@ -90,7 +90,7 @@ const locales = {
             buddy3: 'Artista 3D',
             buddy4: 'Artista 2D',
             buddy5: 'Artista de Concept',
-            buddy6: 'Programmer'
+            buddy6: 'Programador'
         },
         //Footer
         footer: {
