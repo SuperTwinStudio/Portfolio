@@ -254,7 +254,7 @@ class Team {
         },
         {
             idx: 6,
-            img: 'Data/Images/Team/Carlos.webp',
+            img: 'Data/Images/Team/carlos.png',
             name: 'Carlos'
         }
     ]
