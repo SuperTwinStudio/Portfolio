@@ -244,7 +244,7 @@ class Team {
         },
         {
             idx: 4,
-            img: 'Data/Images/favicon.png',
+            img: 'Data/Images/Team/mar.webp',
             name: 'Mar'
         },
         {
