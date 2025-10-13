@@ -761,6 +761,9 @@ dialog:not(#snackbar)[open] {
     --size: min(50vw, 40vh);
     width: var(--size);
     height: var(--size);
+
+    /* Visuals */
+    border-radius: 50%;
 }
 
 /* Buttons */
