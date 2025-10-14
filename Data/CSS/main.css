@@ -35,7 +35,7 @@ html {
     --bg: #e6e6d8;
     --bgThemed: #c8a662;
     --backdrop: rgba(0, 0, 0, 0.4);
-    --hover: color-mix(in srgb, #fff 25%, transparent);
+    --hover: color-mix(in srgb, #000 25%, transparent);
 
     /* Borders */
     --borderTransparent: solid 1px transparent;
