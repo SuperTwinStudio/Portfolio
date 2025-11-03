@@ -19,6 +19,7 @@ const locales = {
             home: 'Home',
             about: 'Our Game',
             team: 'Our Team',
+            contact: 'Contact',
             localization: 'English'
         },
         //Home
@@ -63,6 +64,7 @@ const locales = {
             home: 'Inicio',
             about: 'Nuestro Juego',
             team: 'Nuestro Equipo',
+            contact: 'Contacto',
             localization: 'Español'
         },
         //Home
@@ -128,16 +130,18 @@ class Sidebar {
     #home = document.getElementById('sidebar-home');
     #about = document.getElementById('sidebar-about');
     #team = document.getElementById('sidebar-team');
+    #footer = document.getElementById('sidebar-footer');
     #localization = document.getElementById('sidebar-localization');
 
     constructor() {
-        new CurrentPageIndicator(['home', 'about', 'team']);
+        new CurrentPageIndicator(['home', 'about', 'team', 'footer']);
     }
 
     localize = () => {
         this.#home.innerText = loc.sidebar.home;
         this.#about.innerText = loc.sidebar.about;
         this.#team.innerText = loc.sidebar.team;
+        this.#footer.innerText = loc.sidebar.contact;
         this.#localization.innerText = loc.sidebar.localization;
     }
 
