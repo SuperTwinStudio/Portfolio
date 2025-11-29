@@ -55,7 +55,7 @@ const locales = {
             buddy3: '3D Artist',
             buddy4: '2D Artist',
             buddy5: 'Concept Artist',
-            buddy6: 'Programmer'
+            buddy6: 'Support'
         },
         //Footer
         footer: {
@@ -113,7 +113,7 @@ const locales = {
             buddy3: 'Artista 3D',
             buddy4: 'Artista 2D',
             buddy5: 'Artista de Concept',
-            buddy6: 'Programador'
+            buddy6: 'Soporte'
         },
         //Footer
         footer: {
