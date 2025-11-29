@@ -3,7 +3,7 @@
 
 html {
     /* Size */
-    width: 100%;
+    width: 100vw;
     height: 100dvh;
 
     /* Spacing */
@@ -47,7 +47,7 @@ html {
 body {
     /* Size */
     width: 100%;
-    height: 100dvh;
+    height: 100%;
 
     /* Spacing */
     padding: 0;
