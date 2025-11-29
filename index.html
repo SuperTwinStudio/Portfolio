@@ -66,7 +66,6 @@
     </div>
 
 
-
       <!--$$$                        /$$                           /$$
      /$$__  $$                      | $$                          | $$
     | $$  \__/  /$$$$$$  /$$$$$$$  /$$$$$$    /$$$$$$  /$$$$$$$  /$$$$$$
@@ -76,6 +75,7 @@
     |  $$$$$$/|  $$$$$$/| $$  | $$  |  $$$$/|  $$$$$$$| $$  | $$  |  $$$$/
      \______/  \______/ |__/  |__/   \___/   \_______/|__/  |__/   \_-->
 
+    <!-- Content -->
     <div id="content">
         <!-- Home -->
         <div id="home" class="page">
@@ -248,6 +248,35 @@
             </div>
         </div>
     </div>
+
+
+     <!--$$$$                                                     /$$                 /$$     /$$
+    | $$__  $$                                                   | $$                | $$    |__/
+    | $$  \ $$ /$$$$$$   /$$$$$$   /$$$$$$$  /$$$$$$  /$$$$$$$  /$$$$$$    /$$$$$$  /$$$$$$   /$$  /$$$$$$  /$$$$$$$
+    | $$$$$$$//$$__  $$ /$$__  $$ /$$_____/ /$$__  $$| $$__  $$|_  $$_/   |____  $$|_  $$_/  | $$ /$$__  $$| $$__  $$
+    | $$____/| $$  \__/| $$$$$$$$|  $$$$$$ | $$$$$$$$| $$  \ $$  | $$      /$$$$$$$  | $$    | $$| $$  \ $$| $$  \ $$
+    | $$     | $$      | $$_____/ \____  $$| $$_____/| $$  | $$  | $$ /$$ /$$__  $$  | $$ /$$| $$| $$  | $$| $$  | $$
+    | $$     | $$      |  $$$$$$$ /$$$$$$$/|  $$$$$$$| $$  | $$  |  $$$$/|  $$$$$$$  |  $$$$/| $$|  $$$$$$/| $$  | $$
+    |__/     |__/       \_______/|_______/  \_______/|__/  |__/   \___/   \_______/   \___/  |__/ \______/ |__/  |-->
+
+    <dialog id="presentationMenu">
+        <!-- Title -->
+        <span id="presentationMenuTitle" class="menuTitle">HOLAAA!!!</span>
+
+        <!-- Close button -->
+        <div class="menuClose" onclick="presentation.toggleMenu()">
+            <img src="Data/Images/Icons/close.webp">
+        </div>
+
+        <!-- Content -->
+        <div class="menuList">
+            <!-- Text -->
+            <span id="presentationMenuContent">¡Bienvenido de nuesta presentacion!<br><br>Esperamos que te encante el juego y nos mandes un bizum a cada uno.</span>
+
+            <!-- Game -->
+            <a class="button" target="_blank" href="https://supertwinstudio.itch.io/project-paper" onclick="presentation.toggleMenu()">Itch.io</a>
+        </div>
+    </dialog>
 </body>
 
 <!-- Script -->

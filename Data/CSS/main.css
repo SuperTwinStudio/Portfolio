@@ -220,7 +220,6 @@ li::before {
     border: var(--borderSoft);
 }
 
-
                                                        
   /*$$$$$  /$$       /$$           /$$                          
  /$$__  $$|__/      | $$          | $$                          
@@ -490,7 +489,6 @@ li::before {
 }
 
 
-
  /*$      /$$                                        
 | $$$    /$$$                                        
 | $$$$  /$$$$  /$$$$$$  /$$$$$$$  /$$   /$$  /$$$$$$$
@@ -501,18 +499,18 @@ li::before {
 |__/     |__/ \_______/|__/  |__/ \______/ |______*/
 
 /* Menu backdrop (click to close) */
-dialog:not(#snackbar)::backdrop {
+dialog::backdrop {
     /* Visuals */
     background-color: var(--backdrop);
 }
 
 /* Menu container */
-dialog:not(#snackbar) {
+dialog {
     /* Size */
     width: 400px;
     max-width: calc(100% - 20px);
     max-height: calc(100% - 20px);
-    
+
     /* Spacing */
     padding: 0;
     margin: auto;
@@ -539,7 +537,7 @@ dialog:not(#snackbar) {
     -moz-transition: none; /* Animation is broken in firefox, as always */
 }
 
-dialog:not(#snackbar)[open] {
+dialog[open] {
     /* Visuals */
     opacity: 1;
 
@@ -619,7 +617,6 @@ dialog:not(#snackbar)[open] {
     justify-content: center;
     gap: 10px;
 }
-
 
 
   /*$$$$$                        /$$                           /$$    
@@ -724,7 +721,6 @@ dialog:not(#snackbar)[open] {
 }
 
 
-
  /*$   /$$
 | $$  | $$
 | $$  | $$  /$$$$$$  /$$$$$$/$$$$   /$$$$$$
@@ -814,7 +810,6 @@ dialog:not(#snackbar)[open] {
 }
 
 
-
   /*$$$$$  /$$                             /$$
  /$$__  $$| $$                            | $$
 | $$  \ $$| $$$$$$$   /$$$$$$  /$$   /$$ /$$$$$$
@@ -845,7 +840,6 @@ dialog:not(#snackbar)[open] {
     flex-direction: column;
     gap: 20px;
 }
-
 
 
  /*$$$$$$$
@@ -934,7 +928,6 @@ dialog:not(#snackbar)[open] {
 }
 
 
-
  /*$$$$$$$                    /$$
 | $$_____/                   | $$
 | $$     /$$$$$$   /$$$$$$  /$$$$$$    /$$$$$$   /$$$$$$
@@ -948,6 +941,7 @@ dialog:not(#snackbar)[open] {
     /* Layout */
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .footerButton {
@@ -963,4 +957,34 @@ dialog:not(#snackbar)[open] {
 
     /* Visuals */
     filter: var(--textFilter);
+}
+
+
+ /*$$$$$$                                                     /$$                 /$$     /$$                    
+| $$__  $$                                                   | $$                | $$    |__/                    
+| $$  \ $$ /$$$$$$   /$$$$$$   /$$$$$$$  /$$$$$$  /$$$$$$$  /$$$$$$    /$$$$$$  /$$$$$$   /$$  /$$$$$$  /$$$$$$$ 
+| $$$$$$$//$$__  $$ /$$__  $$ /$$_____/ /$$__  $$| $$__  $$|_  $$_/   |____  $$|_  $$_/  | $$ /$$__  $$| $$__  $$
+| $$____/| $$  \__/| $$$$$$$$|  $$$$$$ | $$$$$$$$| $$  \ $$  | $$      /$$$$$$$  | $$    | $$| $$  \ $$| $$  \ $$
+| $$     | $$      | $$_____/ \____  $$| $$_____/| $$  | $$  | $$ /$$ /$$__  $$  | $$ /$$| $$| $$  | $$| $$  | $$
+| $$     | $$      |  $$$$$$$ /$$$$$$$/|  $$$$$$$| $$  | $$  |  $$$$/|  $$$$$$$  |  $$$$/| $$|  $$$$$$/| $$  | $$
+|__/     |__/       \_______/|_______/  \_______/|__/  |__/   \___/   \_______/   \___/  |__/ \______/ |__/  |_*/
+
+#presentationMenuContent {
+    /* Size */
+    width: 100%;
+
+    /* Spacing */
+    margin-bottom: 20px;
+    padding: 0 20px;
+
+    /* Layout */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+
+    /* Text */
+    text-align: center;
 }

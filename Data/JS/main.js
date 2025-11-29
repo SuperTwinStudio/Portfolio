@@ -52,6 +52,11 @@ const locales = {
         //Footer
         footer: {
             title: "Contact"
+        },
+        //Presentation
+        presentation: {
+            title: 'HIIII!!!',
+            content: "I see you liked the presentation, huh?<br><br>If you like the game, let us know by leaving a comment!"
         }
     }, 
     es: {
@@ -97,6 +102,11 @@ const locales = {
         //Footer
         footer: {
             title: "Contacto"
+        },
+        //Presentation
+        presentation: {
+            title: 'HOLAAA!!!',
+            content: "Veo que te ha molao la presentación, eh?<br><br>¡Si te gusta el juego haznoslo saber dejando un comentario!"
         }
     }
 }
@@ -322,6 +332,52 @@ class Footer {
 const footer = new Footer();
 
 
+ /*$$$$$$                                                     /$$                 /$$     /$$                    
+| $$__  $$                                                   | $$                | $$    |__/                    
+| $$  \ $$ /$$$$$$   /$$$$$$   /$$$$$$$  /$$$$$$  /$$$$$$$  /$$$$$$    /$$$$$$  /$$$$$$   /$$  /$$$$$$  /$$$$$$$ 
+| $$$$$$$//$$__  $$ /$$__  $$ /$$_____/ /$$__  $$| $$__  $$|_  $$_/   |____  $$|_  $$_/  | $$ /$$__  $$| $$__  $$
+| $$____/| $$  \__/| $$$$$$$$|  $$$$$$ | $$$$$$$$| $$  \ $$  | $$      /$$$$$$$  | $$    | $$| $$  \ $$| $$  \ $$
+| $$     | $$      | $$_____/ \____  $$| $$_____/| $$  | $$  | $$ /$$ /$$__  $$  | $$ /$$| $$| $$  | $$| $$  | $$
+| $$     | $$      |  $$$$$$$ /$$$$$$$/|  $$$$$$$| $$  | $$  |  $$$$/|  $$$$$$$  |  $$$$/| $$|  $$$$$$/| $$  | $$
+|__/     |__/       \_______/|_______/  \_______/|__/  |__/   \___/   \_______/   \___/  |__/ \______/ |__/  |_*/
+
+class PresentationMenu {
+
+    //Menu
+    #menu = document.getElementById('presentationMenu');
+    #title = document.getElementById('presentationMenuTitle');
+    #content = document.getElementById('presentationMenuContent');
+
+    toggleMenu = () => {
+        //Toggle menu
+        if (this.#menu.open) {
+            //Close
+            this.#menu.close();
+            Util.toggleScroll(true);
+        } else {
+            //Open
+            this.#menu.showModal();
+            Util.toggleScroll(false);
+        }
+    }
+
+    localize = () => {
+        this.#title.innerText = loc.presentation.title;
+        this.#content.innerHTML = loc.presentation.content;
+    }
+
+    constructor() {
+        //Close menu listener
+        Util.onDialogBackdropClick(this.#menu, this.toggleMenu);
+    }
+
+}
+
+const presentation = new PresentationMenu();
+
+if (window.location.search === '?presentation') presentation.toggleMenu();
+
+
  /*$                                     /$$ /$$                       /$$     /$$                    
 | $$                                    | $$|__/                      | $$    |__/                    
 | $$        /$$$$$$   /$$$$$$$  /$$$$$$ | $$ /$$ /$$$$$$$$  /$$$$$$  /$$$$$$   /$$  /$$$$$$  /$$$$$$$ 
@@ -379,6 +435,9 @@ function localize() {
     about.localize();
     team.localize();
     footer.localize();
+
+    //Menus
+    presentation.localize();
 }
 
 localize()
