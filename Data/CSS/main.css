@@ -41,8 +41,11 @@ html {
     /* Borders */
     --borderTransparent: solid 1px transparent;
     --border: solid 1px var(--text);
-    --borderSoft: solid 1px var(--hover);
-    --borderSoftThick: solid 2px var(--hover);
+    --borderAlt: solid 1px var(--textAlt);
+
+    /* Shadows */
+    --shadowSmall: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+    --shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 body {
@@ -212,15 +215,6 @@ li::before {
     }
 }
 
-/* Glass */
-.glass {
-    background-color: color-mix(in srgb, var(--bg) 65%, transparent);
-    backdrop-filter: blur(10px);
-
-    box-sizing: border-box;
-    border: var(--borderSoft);
-}
-
                                                        
   /*$$$$$  /$$       /$$           /$$                          
  /$$__  $$|__/      | $$          | $$                          
@@ -248,9 +242,9 @@ li::before {
 
     /* Visuals */
     background-color: var(--bg);
-    border: var(--borderSoftThick);
     border-radius: 15px;
     opacity: 0;
+    box-shadow: var(--shadow);
 
     /* Other */
     z-index: 90;
@@ -324,7 +318,6 @@ li::before {
 
     /* Variables */
     --sidebarHiddenMargin: 300px; /* To fix viewport height changing in mobile */
-    --sidebarBorder: 2px;
     --sidebarWidth: var(--sidebarWidthClosed);
     --sidebarWidthOpen: 240px;
     --sidebarWidthClosed: 80px;
@@ -334,10 +327,6 @@ li::before {
 @media screen and (orientation:portrait) {
     .sidebar {
         --sidebarWidth: 0px;
-    }
-
-    .sidebar:not([open]) {
-        --sidebarBorder: 0px;
     }
 
     .sidebar[open] {
@@ -372,7 +361,6 @@ li::before {
 
     /* Visuals */
     background-color: var(--bg);
-    border-right: solid var(--sidebarBorder) var(--hover);
 
     /* Other */
     overflow-x: hidden;
@@ -381,15 +369,23 @@ li::before {
 }
 
 @media screen and (orientation:landscape) {
+    .sidebarLayout {
+        /* Visuals */
+        box-shadow: var(--shadowSmall);
+    }
+
     .sidebarLayout:hover {
         --sidebarWidth: var(--sidebarWidthOpen);
+
+        /* Visuals */
+        box-shadow: var(--shadow);
     }
 }
 
 /* Sidebar buttons */
 .sidebarButton {
     /* Size */
-    width: calc(var(--sidebarWidth) - calc(20px + var(--sidebarBorder)));
+    width: calc(var(--sidebarWidth) - 20px);
     height: 40px;
 
     /* Spacing */
@@ -525,8 +521,8 @@ dialog {
     /* Visuals */
     border-radius: 25px;
     background-color: var(--bg);
-    border: var(--borderSoftThick);
-    outline: transparent;
+    outline: none;
+    border: none;
     color: var(--text);
     opacity: 0;
 
@@ -915,7 +911,7 @@ dialog[open] {
     /* Visuals */
     background-color: var(--bg);
     border-radius: 50%;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: var(--shadow);
 
     /* Other */
     cursor: pointer;
@@ -956,7 +952,7 @@ dialog[open] {
     /* Visuals */
     object-fit: cover;
     border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: var(--shadow);
 
     /* Other */
     cursor: pointer;
@@ -1026,7 +1022,6 @@ dialog[open] {
 
     /* Visuals */
     border-radius: 50%;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     object-fit: cover;
 }
 
