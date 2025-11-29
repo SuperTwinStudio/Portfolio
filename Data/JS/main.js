@@ -17,8 +17,9 @@ const locales = {
         //Sidebar
         sidebar: {
             home: 'Home',
-            about: 'Our Game',
-            team: 'Our Team',
+            about: 'Game',
+            images: 'Images',
+            team: 'Team',
             contact: 'Contact',
             localization: 'English'
         },
@@ -28,17 +29,24 @@ const locales = {
         },
         //About
         about: {
+            title: 'Washi & The Paper Kingdom',
             features: 'Features',
             feature: [
                 'Procedural dungeon generation',
                 'Multiple weapons to choose from',
-                'Different enemies and bosses to combat'
+                'Different enemies and bosses to combat',
+                'Items that aleatorize the runs',
+                'A very cute aesthetic'
             ],
-            content: `Hayashi is a kingdom whose inhabitants are made of a special type of paper that gives them character. 
-                The kingdom is kept safe by ancient magical scrolls that maintain order. 
-                The balance of Hayashi is threatened when the Cult of the Flame breaks down the great gate and breaks into the village to steal the scrolls and kidnap Prince Kami, Washi's brother, to use him as a vessel to resurrect Akarigami, a fearsome deity intent on destroying the world.
+            content: `
+                <i><b>Washi & The Paper Kingdom</b></i> is an isometric extraction-roguelite action videogame set in a miniature fantasy kingdom.
+                The game is centered on combat and the exploration of procedurally generated dungeons, where you explore rooms, find treasures, defeat enemies, and extract the loot found to sell it and buy upgrades.
                 <br><br>
-                Players will accompany little Washi, an origami warrior whose goal is to free his brother from the clutches of the cult and recover the sacred scrolls to restore order to the kingdom and seal Akarigami away.`
+                The game follows the story of Hayashi, a kingdom where its inhabitants are made of a special type of paper that gives them character.
+                The kingdom is kept safe by ancient magical scrolls (papyri) that maintain order.
+                Hayashi's balance is threatened when the Cult of the Flame breaches the great gate and bursts into the town to steal the scrolls and kidnap Prince Kami, Washi's brother, to use him as a receptacle to resurrect Akarigami, a fearsome deity who intends to destroy the world.
+                <br><br>
+                Players will accompany the little Washi, an origami warrior whose goal is to free his brother from the clutches of the cult and recover the sacred scrolls to restore order to the kingdom and seal Akarigami.`
         },
         //Team
         team: {
@@ -56,7 +64,7 @@ const locales = {
         //Presentation
         presentation: {
             title: 'HIIII!!!',
-            content: "I see you liked the presentation, huh?<br><br>If you like the game, let us know by leaving a comment!"
+            content: "So coming from the presentation huh?<br><br>If you like the game, let us know by leaving a comment!"
         }
     }, 
     es: {
@@ -67,8 +75,9 @@ const locales = {
         //Sidebar
         sidebar: {
             home: 'Inicio',
-            about: 'Nuestro Juego',
-            team: 'Nuestro Equipo',
+            about: 'Juego',
+            images: 'Imagenes',
+            team: 'Equipo',
             contact: 'Contacto',
             localization: 'Español'
         },
@@ -78,13 +87,20 @@ const locales = {
         },
         //About
         about: {
+            title: 'Washi & The Paper Kingdom',
             features: 'Características',
             feature: [
                 'Generación procedimental de mazmorras',
                 'Multiples armas para elegir',
-                'Diferentes enemigos y jefes para combatir'
+                'Diferentes enemigos y jefes para combatir',
+                'Items que aleatorizan las runs',
+                'Una estética muy mona'
             ],
-            content: `Hayashi es un reino cuyos habitantes están hechos de un tipo de papel especial que les otorga carácter. 
+            content: `
+                <i><b>Washi & The Paper Kingdom</b></i> es un videojuego de acción de género extraction-roguelite en perspectiva isométrica ambientado en un reino fantástico en miniatura. 
+                El juego está centrado en el combate y en la exploración de mazmorras generadas procedimentalmente, donde se exploran salas, encuentran tesoros, derrotan enemigos y extrae el botín encontrado para venderlo y comprar mejoras.
+                <br><br>
+                El juego sigue la historia de Hayashi, un reino donde sus habitantes están hechos de un tipo de papel especial que les otorga carácter. 
                 El reino se mantiene a salvo gracias a unos ancestrales papiros mágicos que mantienen el orden. 
                 El equilibrio de Hayashi se ve amenazado cuando el Culto de la Llama quebranta la gran puerta e irrumpe en el pueblo para robar los papiros y secuestrar al príncipe Kami, hermano de Washi, para emplearlo como receptáculo y resucitar a Akarigami, una deidad temible que pretende destruir el mundo. 
                 <br><br>
@@ -106,7 +122,7 @@ const locales = {
         //Presentation
         presentation: {
             title: 'HOLAAA!!!',
-            content: "Veo que te ha molao la presentación, eh?<br><br>¡Si te gusta el juego haznoslo saber dejando un comentario!"
+            content: "Conque vienes de la presentación eh?<br><br>¡Si te gusta el juego haznoslo saber dejando un comentario!"
         }
     }
 }
@@ -139,17 +155,19 @@ class Sidebar {
     //State
     #home = document.getElementById('sidebar-home');
     #about = document.getElementById('sidebar-about');
+    #images = document.getElementById('sidebar-images');
     #team = document.getElementById('sidebar-team');
     #footer = document.getElementById('sidebar-footer');
     #localization = document.getElementById('sidebar-localization');
 
     constructor() {
-        new CurrentPageIndicator(['home', 'about', 'team', 'footer']);
+        new CurrentPageIndicator(['home', 'about', 'images', 'team', 'footer']);
     }
 
     localize = () => {
         this.#home.innerText = loc.sidebar.home;
         this.#about.innerText = loc.sidebar.about;
+        this.#images.innerText = loc.sidebar.images;
         this.#team.innerText = loc.sidebar.team;
         this.#footer.innerText = loc.sidebar.contact;
         this.#localization.innerText = loc.sidebar.localization;
@@ -213,7 +231,7 @@ class About {
     #features = document.getElementById('aboutFeatures');
 
     localize = () => {
-        this.#title.innerText = loc.sidebar.about;
+        this.#title.innerText = loc.about.title;
         this.#content.innerHTML = loc.about.content;
         this.#features.innerText = loc.about.features;
         for (let i = 0; i < loc.about.feature.length; i++) {
@@ -227,6 +245,78 @@ class About {
 
 const about = new About();
 
+
+ /*$$$$$
+|_  $$_/
+  | $$   /$$$$$$/$$$$   /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$$
+  | $$  | $$_  $$_  $$ |____  $$ /$$__  $$ /$$__  $$ /$$_____/
+  | $$  | $$ \ $$ \ $$  /$$$$$$$| $$  \ $$| $$$$$$$$|  $$$$$$
+  | $$  | $$ | $$ | $$ /$$__  $$| $$  | $$| $$_____/ \____  $$
+ /$$$$$$| $$ | $$ | $$|  $$$$$$$|  $$$$$$$|  $$$$$$$ /$$$$$$$/
+|______/|__/ |__/ |__/ \_______/ \____  $$ \_______/|_______/
+                                 /$$  \ $$
+                                |  $$$$$$/
+                                 \_____*/
+
+class Images {
+
+    //Components
+    #background = document.getElementById('images');
+
+    //Items
+    #itemsParent = document.getElementById('imagesItems');
+    #items = []
+    #images = [
+        '0.webp',
+        '1.webp',
+        '2.webp',
+        '3.webp',
+        '4.webp',
+    ]
+    #current = 0
+
+
+    //State
+    constructor() {
+        //Add arrow events
+        document.getElementById('imagesArrowPrevious').onclick = this.previous;
+        document.getElementById('imagesArrowNext').onclick = this.next;
+
+        //Create image previews
+        for (let i = 0; i < this.#images.length; i++) {
+            const item = document.createElement('img');
+            item.classList.add('imagesItem');
+            item.src = `Data/Images/Carousel/${this.#images[i]}`;
+            item.onclick = () => this.select(i);
+            this.#itemsParent.appendChild(item);
+            this.#items.push(item);
+        }
+
+        //Select first
+        this.select(0);
+    }
+
+    localize = () => {}
+
+    //Navigation
+    previous = () => {
+        this.select(this.#current > 0 ? this.#current - 1 : this.#images.length - 1);
+    }
+
+    next = () => {
+        this.select(this.#current < this.#images.length - 1 ? this.#current + 1 : 0);
+    }
+
+    select = (index) => {
+        this.#items[this.#current].removeAttribute('selected');
+        this.#current = index;
+        this.#items[this.#current].setAttribute('selected', '');
+        this.#background.style.setProperty('--image', `url('../Images/Carousel/${this.#images[index]}')`);
+    }
+
+}
+
+const images = new Images();
 
  /*$$$$$$$
 |__  $$__/
@@ -433,6 +523,7 @@ function localize() {
     //Pages
     home.localize();
     about.localize();
+    images.localize();
     team.localize();
     footer.localize();
 

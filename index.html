@@ -40,12 +40,17 @@
             </a>
             <a id="goTo-about" class="sidebarButton" onclick="goTo('about')">
                 <img src="Data/Images/Icons/game.webp">
-                <span id="sidebar-about">Our Game</span>
+                <span id="sidebar-about">Game</span>
+                <indicator class="sidebarButtonIndicator"></indicator>
+            </a>
+            <a id="goTo-images" class="sidebarButton" onclick="goTo('images')">
+                <img src="Data/Images/Icons/images.webp">
+                <span id="sidebar-images">Images</span>
                 <indicator class="sidebarButtonIndicator"></indicator>
             </a>
             <a id="goTo-team" class="sidebarButton" onclick="goTo('team')">
                 <img src="Data/Images/Icons/about.webp">
-                <span id="sidebar-team">Our Team</span>
+                <span id="sidebar-team">Team</span>
                 <indicator class="sidebarButtonIndicator"></indicator>
             </a>
             <a id="goTo-footer" class="sidebarButton" onclick="goTo('footer')">
@@ -98,7 +103,7 @@
             </div>
         </div>
 
-        <!-- Our Game -->
+        <!-- Game -->
         <div id="about" class="page" themed>
             <!-- Rupture -->
             <svg class="rupture" viewBox="0 0 1158.5 27.5" xmlns="http://www.w3.org/2000/svg">
@@ -133,6 +138,8 @@
                     <li id="aboutFeature0">Procedural dungeon generation</li>
                     <li id="aboutFeature1">Multiple weapons to choose from</li>
                     <li id="aboutFeature2">Different enemies and bosses</li>
+                    <li id="aboutFeature3">Items that aleatorize the runs</li>
+                    <li id="aboutFeature4">A very cute aesthetic</li>
                 </ul>
             </div>
             
@@ -142,8 +149,29 @@
             </svg>
         </div>
 
-        <!-- Our Team -->
-        <div id="team" class="page">
+        <!-- Images -->
+        <div id="images" class="page">
+            <!-- Carousel -->
+            <div class="imagesArrows">
+                <div id="imagesArrowPrevious" class="imagesArrow">
+                    <img src="Data/Images/Icons/play.svg" style="scale: -1;">
+                </div>
+                <div id="imagesArrowNext" class="imagesArrow">
+                    <img src="Data/Images/Icons/play.svg">
+                </div>
+            </div>
+    
+            <!-- Carousel -->
+            <div id="imagesItems" class="imagesItems"></div>
+        </div>
+
+        <!-- Team -->
+        <div id="team" class="page" themed>
+            <!-- Rupture -->
+            <svg class="rupture" viewBox="0 0 1158.5 27.5" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1158.5 27.5H0V18.5L50.5 8.5L95.5 13L229.5 8.5L480.5 13.5L561 8.5L602 13.5L623 0L794 8.5L876 18.5L942 8.5L1158.5 18.5V27.5Z"/>
+            </svg>
+
             <!-- Title -->
             <div id="teamTitle" class="pageTitle">Our Team</div>
             
@@ -203,15 +231,15 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Rupture -->
+            <svg class="rupture" reverse viewBox="0 0 1158.5 27.5" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1158.5 27.5H0V18.5L50.5 8.5L95.5 13L229.5 8.5L480.5 13.5L561 8.5L602 13.5L623 0L794 8.5L876 18.5L942 8.5L1158.5 18.5V27.5Z"/>
+            </svg>
         </div>
 
         <!-- Footer -->
-        <div id="footer" class="page" themed>
-            <!-- Rupture -->
-            <svg class="rupture" viewBox="0 0 1158.5 27.5" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1158.5 27.5H0V18.5L50.5 8.5L95.5 13L229.5 8.5L480.5 13.5L561 8.5L602 13.5L623 0L794 8.5L876 18.5L942 8.5L1158.5 18.5V27.5Z"/>
-            </svg>
-
+        <div id="footer" class="page">
             <!-- Title -->
             <div id="footerTitle" class="pageTitle">Contact</div>
 

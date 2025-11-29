@@ -32,10 +32,11 @@ html {
     --linkFilter: brightness(0) invert(29%) sepia(74%) saturate(2123%) hue-rotate(327deg) brightness(83%) contrast(111%);
 
     /* Layout */
-    --bg: #e6e6d8;
+    --bg: var(--bgOG);
+    --bgOG: #e6e6d8;
     --bgThemed: #c8a662;
     --backdrop: rgba(0, 0, 0, 0.4);
-    --hover: color-mix(in srgb, #000 25%, transparent);
+    --hover: color-mix(in srgb, var(--accent) 30%, transparent);
 
     /* Borders */
     --borderTransparent: solid 1px transparent;
@@ -596,7 +597,7 @@ dialog[open] {
 
 .menuClose:hover {
     /* Visuals */
-    background-color: color-mix(in srgb, var(--accent) 30%, transparent);
+    background-color: var(--hover);
     border: var(--border)
 }
 
@@ -731,8 +732,8 @@ dialog[open] {
 |__/  |__/ \______/ |__/ |__/ |__/ \______*/
 
 #home {
-    /* Home */
-    min-height: 100vh;
+    /* Size */
+    height: 100vh;
 
     /* Layout */
     align-items: center;
@@ -842,6 +843,145 @@ dialog[open] {
 }
 
 
+ /*$$$$$
+|_  $$_/
+  | $$   /$$$$$$/$$$$   /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$$
+  | $$  | $$_  $$_  $$ |____  $$ /$$__  $$ /$$__  $$ /$$_____/
+  | $$  | $$ \ $$ \ $$  /$$$$$$$| $$  \ $$| $$$$$$$$|  $$$$$$
+  | $$  | $$ | $$ | $$ /$$__  $$| $$  | $$| $$_____/ \____  $$
+ /$$$$$$| $$ | $$ | $$|  $$$$$$$|  $$$$$$$|  $$$$$$$ /$$$$$$$/
+|______/|__/ |__/ |__/ \_______/ \____  $$ \_______/|_______/
+                                 /$$  \ $$
+                                |  $$$$$$/
+                                 \_____*/
+
+#images {
+    --image: url(../Images/banner.webp);
+
+    /* Size */
+    height: 100vh;
+
+    /* Spacing */
+    padding: 100px 60px;
+
+    /* Layout */
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+
+    /* Visuals */
+    background-image: 
+        var(--image),
+        linear-gradient(#000);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    /* Text */
+    color: #f5f5f5;
+    text-shadow: 1px 1px 2px #000;
+}
+
+@media screen and (orientation:portrait) {
+    #images {
+        /* Spacing */
+        padding: 60px 30px;
+
+        /* Visuals */
+        background-size: contain;
+    }
+}
+
+/* Arrows */
+.imagesArrows {
+    /* Layout */
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.imagesArrow {
+    /* Size */
+    width: 50px;
+    height: 50px;
+
+    /* Layout */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Visuals */
+    background-color: var(--bg);
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    /* Other */
+    cursor: pointer;
+}
+
+.imagesArrow > img {
+    /* Size */
+    width: 50%;
+    height: 50%;
+
+    /* Visuals */
+    filter: brightness(0);
+}
+
+/* Items */
+.imagesItems {
+    /* Layout */
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: end;
+}
+
+@media screen and (orientation:portrait) {
+    .imagesItems {
+        /* Layout */
+        display: none;
+    }
+}
+
+.imagesItem {
+    --scale: 1;
+
+    /* Size */
+    width: calc(120px * var(--scale));
+    height: calc(180px * var(--scale));
+
+    /* Visuals */
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    /* Other */
+    cursor: pointer;
+}
+
+.imagesItem[selected] {
+    /* Visuals */
+    outline: solid 4px var(--bg);
+    outline-offset: -4px;
+    animation: imagesItemBounce 0.15s;
+}
+
+@keyframes imagesItemBounce {
+    0% {
+        transform: translateY(0);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0); 
+    }
+}
+
+
  /*$$$$$$$
 |__  $$__/
    | $$  /$$$$$$   /$$$$$$  /$$$$$$/$$$$
@@ -850,11 +990,6 @@ dialog[open] {
    | $$| $$_____/ /$$__  $$| $$ | $$ | $$
    | $$|  $$$$$$$|  $$$$$$$| $$ | $$ | $$
    |__/ \_______/ \_______/|__/ |__/ |_*/
-
-#team {
-    /* Spacing */
-    margin: 40px 0 70px 0;
-}
 
 .teamContent {
     /* Layout */
@@ -897,7 +1032,7 @@ dialog[open] {
 
 .teamBuddy > div {
     /* Size */
-    width: 100%;
+    width: 70%;
 
     /* Spacing */
     padding: 20px;
@@ -910,7 +1045,7 @@ dialog[open] {
     gap: 10px;
 
     /* Visuals */
-    background-color: #c8a662;
+    background-color: var(--bgOG);
     border-radius: 20px;
 
     /* Text */
