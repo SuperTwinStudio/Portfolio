@@ -490,8 +490,12 @@ class Util {
         return Math.floor(Math.random() * (max - min)) + min;
     }
 
-    static shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
+    static shuffleArray(array, length) {
+        //Fix length arg
+        if (typeof length !== 'number' || length <= 0) length = array.length;
+
+        //Shuffle
+        for (let i = length - 1; i > 0; i--) {
             const randomIndex = Math.floor(Math.random() * (i + 1));
             [array[i], array[randomIndex]] = [array[randomIndex], array[i]];
         }

@@ -1037,6 +1037,7 @@ dialog[open] {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
 
     /* Visuals */

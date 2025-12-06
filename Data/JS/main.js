@@ -50,12 +50,12 @@ const locales = {
         },
         //Team
         team: {
-            buddy1: 'Programmer',
-            buddy2: 'Programmer',
+            buddy1: 'Programmer, SFX Designer, UI/UX Designer',
+            buddy2: 'Programmer, 2D Artist',
             buddy3: '3D Artist',
-            buddy4: '2D Artist',
-            buddy5: 'Concept Artist',
-            buddy6: 'Support'
+            buddy4: '3D Artist, UX designer',
+            buddy5: 'Concept Artist, 2D Artist, UI Designer',
+            buddy6: 'Additional Support'
         },
         //Footer
         footer: {
@@ -108,12 +108,12 @@ const locales = {
         },
         //Team
         team: {
-            buddy1: 'Programador',
-            buddy2: 'Programador',
+            buddy1: 'Programador, Diseñador de SFX, Diseñador de UI/UX',
+            buddy2: 'Programador, Artista 2D',
             buddy3: 'Artista 3D',
-            buddy4: 'Artista 2D',
-            buddy5: 'Artista de Concept',
-            buddy6: 'Soporte'
+            buddy4: 'Artista 3D, Diseñadora de UX',
+            buddy5: 'Artista de Concept, Artista 2D, Diseñadora de UI',
+            buddy6: 'Soporte Adicional'
         },
         //Footer
         footer: {
@@ -334,27 +334,47 @@ class Team {
         {
             idx: 1,
             img: 'Data/Images/Team/alex.webp',
-            name: 'Alex'
+            name: 'Alex',
+            link: {
+                name: 'Portfolio',
+                url: 'https://botpa.vercel.app/'
+            }
         },
         {
             idx: 2,
             img: 'Data/Images/Team/pablo.webp',
-            name: 'Pablo'
+            name: 'Pablo',
+            link: {
+                name: 'Itch.io',
+                url: 'https://thatbit.itch.io/'
+            }
         },
         {
             idx: 3,
             img: 'Data/Images/Team/raul.webp',
-            name: 'Raúl'
+            name: 'Raúl',
+            link: {
+                name: 'Itch.io',
+                url: 'https://racurrandom.itch.io/'
+            }
         },
         {
             idx: 4,
             img: 'Data/Images/Team/mar.webp',
-            name: 'Mar'
+            name: 'Mar',
+            link: {
+                name: 'Itch.io',
+                url: 'https://mar-tess.itch.io/'
+            }
         },
         {
             idx: 5,
             img: 'Data/Images/Team/sara.webp',
-            name: 'Sara'
+            name: 'Sara',
+            link: {
+                name: 'Itch.io',
+                url: 'https://sararb.itch.io/'
+            }
         },
         {
             idx: 6,
@@ -372,15 +392,23 @@ class Team {
 
     constructor() {
         //Shuffle buddies
-        Util.shuffleArray(this.buddies);
+        Util.shuffleArray(this.buddies, this.buddies.length - 1);
 
         //Apply info to buddies
         this.eachbuddy((buddy, index) => {
             const img = document.getElementById(`teamBuddy${index}-img`);
             const name = document.getElementById(`teamBuddy${index}-name`);
+            const link = document.getElementById(`teamBuddy${index}-link`);
 
             img.src = buddy.img;
             name.innerText = buddy.name;
+            if (buddy.link) {
+                link.style.display = 'flex';
+                link.innerText = buddy.link.name;
+                link.href = buddy.link.url;
+            } else {
+                link.style.display = 'none';
+            }
         });
     }
 
