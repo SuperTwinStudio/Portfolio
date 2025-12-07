@@ -45,12 +45,17 @@
             </a>
             <a id="goTo-images" class="sidebarButton" onclick="goTo('images')">
                 <img src="Data/Images/Icons/images.webp">
-                <span id="sidebar-images">Images</span>
+                <span id="sidebar-images">Screenshots</span>
                 <indicator class="sidebarButtonIndicator"></indicator>
             </a>
             <a id="goTo-team" class="sidebarButton" onclick="goTo('team')">
                 <img src="Data/Images/Icons/about.webp">
                 <span id="sidebar-team">Team</span>
+                <indicator class="sidebarButtonIndicator"></indicator>
+            </a>
+            <a id="goTo-projects" class="sidebarButton" onclick="goTo('projects')">
+                <img src="Data/Images/Icons/projects.webp">
+                <span id="sidebar-projects">Projects</span>
                 <indicator class="sidebarButtonIndicator"></indicator>
             </a>
             <a id="goTo-footer" class="sidebarButton" onclick="goTo('footer')">
@@ -110,39 +115,45 @@
                 <path d="M1158.5 27.5H0V18.5L50.5 8.5L95.5 13L229.5 8.5L480.5 13.5L561 8.5L602 13.5L623 0L794 8.5L876 18.5L942 8.5L1158.5 18.5V27.5Z"/>
             </svg>
 
-            <!-- Column 1 -->
-            <div class="aboutContent" style="flex: 1;">
-                <!-- Title -->
-                <div id="aboutTitle" class="pageTitle">Our Game!</div>
+            <!-- Colums -->
+            <div class="aboutColumns">
+                <!-- Column 1 -->
+                <div class="aboutContent" style="flex: 1;">
+                    <!-- Title -->
+                    <div id="aboutTitle" class="pageTitle">Our Game!</div>
 
-                <!-- Content -->
-                <span id="aboutContent">
-                    The Hog Rider is a Rare card that is unlocked from the Builder's Workshop (Arena 5). 
-                    It spawns a fast, single-target, building-targeting, melee, ground troop with high hitpoints and high damage. 
-                    <br><br>
-                    He is able to jump over the river. 
-                    He appears as a dark-skinned shirtless man with blue eyes, dark brown eyebrows, beard and mohawk, and a golden body piercing in his left ear, wearing a team-colored belt and wristbands, along with a brown loincloth and sandals. 
-                    <br><br>
-                    He wields a hammer with two brass-colored bands and a team-colored ribbon tied at the bottom, and is riding a hog. 
-                    A Hog Rider card costs 4 Elixir to deploy.
-                </span>
+                    <!-- Content -->
+                    <span id="aboutContent">
+                        The Hog Rider is a Rare card that is unlocked from the Builder's Workshop (Arena 5). 
+                        It spawns a fast, single-target, building-targeting, melee, ground troop with high hitpoints and high damage. 
+                        <br><br>
+                        He is able to jump over the river. 
+                        He appears as a dark-skinned shirtless man with blue eyes, dark brown eyebrows, beard and mohawk, and a golden body piercing in his left ear, wearing a team-colored belt and wristbands, along with a brown loincloth and sandals. 
+                        <br><br>
+                        He wields a hammer with two brass-colored bands and a team-colored ribbon tied at the bottom, and is riding a hog. 
+                        A Hog Rider card costs 4 Elixir to deploy.
+                    </span>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="aboutContent">
+                    <!-- Title -->
+                    <div id="aboutFeatures" class="pageTitle">Features</div>
+
+                    <!-- Content -->
+                    <ul>
+                        <li id="aboutFeature0">Procedural dungeon generation</li>
+                        <li id="aboutFeature1">Multiple weapons to choose from</li>
+                        <li id="aboutFeature2">Different enemies and bosses</li>
+                        <li id="aboutFeature3">Items that aleatorize the runs</li>
+                        <li id="aboutFeature4">A very cute aesthetic</li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- Column 2 -->
-            <div class="aboutContent">
-                <!-- Title -->
-                <div id="aboutFeatures" class="pageTitle">Features</div>
+            <!-- Navigation button -->
+            <div id="aboutImages" class="button" onclick="goTo('images')" style="width: max-content;">Check out some screenshots!</div>
 
-                <!-- Content -->
-                <ul>
-                    <li id="aboutFeature0">Procedural dungeon generation</li>
-                    <li id="aboutFeature1">Multiple weapons to choose from</li>
-                    <li id="aboutFeature2">Different enemies and bosses</li>
-                    <li id="aboutFeature3">Items that aleatorize the runs</li>
-                    <li id="aboutFeature4">A very cute aesthetic</li>
-                </ul>
-            </div>
-            
             <!-- Rupture -->
             <svg class="rupture" reverse viewBox="0 0 1158.5 27.5" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1158.5 27.5H0V18.5L50.5 8.5L95.5 13L229.5 8.5L480.5 13.5L561 8.5L602 13.5L623 0L794 8.5L876 18.5L942 8.5L1158.5 18.5V27.5Z"/>
@@ -173,67 +184,67 @@
             </svg>
 
             <!-- Title -->
-            <div id="teamTitle" class="pageTitle">Our Team</div>
+            <div id="teamTitle" class="pageTitle">Team</div>
             
             <!-- Content -->
             <div class="teamContent">
                 <!-- Buddy 1 -->
                 <div class="teamBuddy">
-                    <img id="teamBuddy1-img" src="Data/Images/favicon.png">
+                    <img id="teamBuddy0-img" src="Data/Images/favicon.png">
                     <div>
-                        <span id="teamBuddy1-name">Buddy Gurt</span>
-                        <span id="teamBuddy1-desc">Buddy Yo</span>
-                        <a id="teamBuddy1-link" class="button" target="_blank">Link</a>
+                        <span id="teamBuddy0-name">Gurt</span>
+                        <span id="teamBuddy0-desc">Yo</span>
+                        <a id="teamBuddy0-button" class="button" target="_blank">Link</a>
                     </div>
                 </div>
-                
+
                 <!-- Buddy 2 -->
+                <div class="teamBuddy">
+                    <img id="teamBuddy1-img" src="Data/Images/favicon.png">
+                    <div>
+                        <span id="teamBuddy1-name">Gurt</span>
+                        <span id="teamBuddy1-desc">Yo</span>
+                        <a id="teamBuddy1-button" class="button" target="_blank">Link</a>
+                    </div>
+                </div>
+
+                <!-- Buddy 3 -->
                 <div class="teamBuddy">
                     <img id="teamBuddy2-img" src="Data/Images/favicon.png">
                     <div>
-                        <span id="teamBuddy2-name">Buddy Gurt</span>
-                        <span id="teamBuddy2-desc">Buddy Yo</span>
-                        <a id="teamBuddy2-link" class="button" target="_blank">Link</a>
+                        <span id="teamBuddy2-name">Gurt</span>
+                        <span id="teamBuddy2-desc">Yo</span>
+                        <a id="teamBuddy2-button" class="button" target="_blank">Link</a>
                     </div>
                 </div>
-                
-                <!-- Buddy 3 -->
+
+                <!-- Buddy 4 -->
                 <div class="teamBuddy">
                     <img id="teamBuddy3-img" src="Data/Images/favicon.png">
                     <div>
-                        <span id="teamBuddy3-name">Buddy Gurt</span>
-                        <span id="teamBuddy3-desc">Buddy Yo</span>
-                        <a id="teamBuddy3-link" class="button" target="_blank">Link</a>
+                        <span id="teamBuddy3-name">Gurt</span>
+                        <span id="teamBuddy3-desc">Yo</span>
+                        <a id="teamBuddy3-button" class="button" target="_blank">Link</a>
                     </div>
                 </div>
-                
-                <!-- Buddy 4 -->
+
+                <!-- Buddy 5 -->
                 <div class="teamBuddy">
                     <img id="teamBuddy4-img" src="Data/Images/favicon.png">
                     <div>
-                        <span id="teamBuddy4-name">Buddy Gurt</span>
-                        <span id="teamBuddy4-desc">Buddy Yo</span>
-                        <a id="teamBuddy4-link" class="button" target="_blank">Link</a>
+                        <span id="teamBuddy4-name">Gurt</span>
+                        <span id="teamBuddy4-desc">Yo</span>
+                        <a id="teamBuddy4-button" class="button" target="_blank">Link</a>
                     </div>
                 </div>
-                
-                <!-- Buddy 5 -->
+
+                <!-- Buddy 6 -->
                 <div class="teamBuddy">
                     <img id="teamBuddy5-img" src="Data/Images/favicon.png">
                     <div>
-                        <span id="teamBuddy5-name">Buddy Gurt</span>
-                        <span id="teamBuddy5-desc">Buddy Yo</span>
-                        <a id="teamBuddy5-link" class="button" target="_blank">Link</a>
-                    </div>
-                </div>
-                
-                <!-- Buddy 6 -->
-                <div class="teamBuddy">
-                    <img id="teamBuddy6-img" src="Data/Images/favicon.png">
-                    <div>
-                        <span id="teamBuddy6-name">Buddy Gurt</span>
-                        <span id="teamBuddy6-desc">Buddy Yo</span>
-                        <a id="teamBuddy6-link" class="button" target="_blank">Link</a>
+                        <span id="teamBuddy5-name">Gurt</span>
+                        <span id="teamBuddy5-desc">Yo</span>
+                        <a id="teamBuddy5-button" class="button" target="_blank">Link</a>
                     </div>
                 </div>
             </div>
@@ -244,8 +255,74 @@
             </svg>
         </div>
 
+        <!-- Projects -->
+        <div id="projects" class="page">
+            <!-- Title -->
+            <div id="projectsTitle" class="pageTitle">Projects</div>
+
+            <!-- Projects -->
+            <div class="projectsList">
+                <!-- Project 0 -->
+                <div class="project">
+                    <div class="projectImage">
+                        <img id="project0-image">
+                    </div>
+                    <div class="projectContent">
+                        <div id="project0-buddies"></div>
+                        <div id="project0-title">Title</div>
+                        <div id="project0-content">Content</div>
+                        <a id="project0-button" class="button" target="_blank">Button</a>
+                    </div>
+                </div>
+
+                <!-- Project 1 -->
+                <div class="project" reverse>
+                    <div class="projectImage">
+                        <img id="project1-image">
+                    </div>
+                    <div class="projectContent">
+                        <div id="project1-buddies"></div>
+                        <div id="project1-title">Title</div>
+                        <div id="project1-content">Content</div>
+                        <a id="project1-button" class="button" target="_blank">Button</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project">
+                    <div class="projectImage">
+                        <img id="project2-image">
+                    </div>
+                    <div class="projectContent">
+                        <div id="project2-buddies"></div>
+                        <div id="project2-title">Title</div>
+                        <div id="project2-content">Content</div>
+                        <a id="project2-button" class="button" target="_blank">Button</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project" reverse>
+                    <div class="projectImage">
+                        <img id="project3-image">
+                    </div>
+                    <div class="projectContent">
+                        <div id="project3-buddies"></div>
+                        <div id="project3-title">Title</div>
+                        <div id="project3-content">Content</div>
+                        <a id="project3-button" class="button" target="_blank">Button</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Footer -->
-        <div id="footer" class="page">
+        <div id="footer" class="page" themed>
+            <!-- Rupture -->
+            <svg class="rupture" viewBox="0 0 1158.5 27.5" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1158.5 27.5H0V18.5L50.5 8.5L95.5 13L229.5 8.5L480.5 13.5L561 8.5L602 13.5L623 0L794 8.5L876 18.5L942 8.5L1158.5 18.5V27.5Z"/>
+            </svg>
+
             <!-- Title -->
             <div id="footerTitle" class="pageTitle">Contact</div>
 

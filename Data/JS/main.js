@@ -17,15 +17,16 @@ const locales = {
         //Sidebar
         sidebar: {
             home: 'Home',
-            about: 'Game',
-            images: 'Images',
+            about: 'Washi',
+            images: 'Screenshots',
             team: 'Team',
+            projects: 'Projects',
             contact: 'Contact',
             localization: 'English'
         },
         //Home
         home: {
-            description: 'Very very cool game!',
+            description: 'Very very cool games!',
         },
         //About
         about: {
@@ -46,16 +47,67 @@ const locales = {
                 The kingdom is kept safe by ancient magical scrolls (papyri) that maintain order.
                 Hayashi's balance is threatened when the Cult of the Flame breaches the great gate and bursts into the town to steal the scrolls and kidnap Prince Kami, Washi's brother, to use him as a receptacle to resurrect Akarigami, a fearsome deity who intends to destroy the world.
                 <br><br>
-                Players will accompany the little Washi, an origami warrior whose goal is to free his brother from the clutches of the cult and recover the sacred scrolls to restore order to the kingdom and seal Akarigami.`
+                Players will accompany the little Washi, an origami warrior whose goal is to free his brother from the clutches of the cult and recover the sacred scrolls to restore order to the kingdom and seal Akarigami.`,
+            images: 'Check out some screenshots!'
         },
         //Team
         team: {
-            buddy1: 'Programmer, SFX Designer, UI/UX Designer',
-            buddy2: 'Programmer, 2D Artist',
-            buddy3: '3D Artist',
-            buddy4: '3D Artist, UX designer',
-            buddy5: 'Concept Artist, 2D Artist, UI Designer',
-            buddy6: 'Additional Support'
+            alex: 'Programmer, SFX Designer, UI/UX Designer',
+            racu: '3D Artist',
+            pablo: 'Programmer, 2D Artist',
+            mar: '3D Artist, UX designer',
+            sara: 'Concept Artist, 2D Artist, UI Designer',
+            carlos: 'Additional Support'
+        },
+        //Projects
+        projects: {
+            title: 'Other Projects',
+            list: {
+                tochimochi: {
+                    title: 'Tochimochi',
+                    content: `
+                        Second place in the international edition of the <a href="https://itch.io/jam/game-jam-internacional-cutn-buenos-aires" target="_blank">GameScholars gamejam</a>
+                        <br><br>
+                        In Tochimochi you will help your new virtual friend, Mochi, complete the mission of seeing his granny. To do that, you will have to merge both the real and virtual world to complete puzzles using your computer and your phone.
+                    `,
+                    button: 'Download&nbsp<i>Tochimochi</i>'
+                },
+                hardcore_kitty: {
+                    title: 'Hardcore Kitty',
+                    content: `
+                        Third place in the 6º edition of the <a href="https://itch.io/jam/6-edicin-game-jam-game-scholars" target="_blank">GameScholars gamejam</a>.
+                        <br><br>
+                        In Hardcore Kitty, you play as a cat working for a delivery company.
+                        <br><br>
+                        Your goal is to find pickup points, collect food, and deliver it to the drop-off points, performing tricks and flips on your skateboard along the way.
+                    `,
+                    button: 'Download&nbsp<i>Hardcore Kitty</i>'
+                },
+                raccoon: {
+                    title: 'Esto AÚN no es un Juego',
+                    content: `
+                        Winner of the 3º edition of the <a href="https://itch.io/jam/gamescholars-3rd-edition" target="_blank">GameScholars gamejam</a>.
+                        <br><br>
+                        In Esto AÚN no es un juego you will help a programer raccoon finish his game before his gamejam ends.
+                        <br><br>
+                        Due to the little time he has left, to achieve this you will have to go inside the game and fix bugs from there.
+                        <br><br>
+                        Your mission will be to change how things work, so that you are able to get to each level's ending and continue to the next.
+                    `,
+                    button: 'Download&nbsp<i>Esto AÚN no es un Juego</i>'
+                },
+                spyw4re: {
+                    title: 'Spyw4re',
+                    content: `
+                        Second place out of 25 in the 5º edition of the <a href="https://itch.io/jam/5-edicin-game-jam-game-scholars" target="_blank">GameScholars gamejam</a>.
+                        <br><br>
+                        In Spyw4re, you are a CCTV operator in an asylum. The building is falling down and a patient is still inside, so you'll need to help him get out.
+                        <br><br>
+                        In order to leave, you'll need to solve some puzzles and defeat some enemies, but don't think it will be that easy, someone doesn't want you to help him...
+                    `,
+                    button: 'Download&nbsp<i>Spyw4re</i>'
+                }
+            }
         },
         //Footer
         footer: {
@@ -75,15 +127,16 @@ const locales = {
         //Sidebar
         sidebar: {
             home: 'Inicio',
-            about: 'Juego',
-            images: 'Imagenes',
+            about: 'Washi',
+            images: 'Capturas',
             team: 'Equipo',
+            projects: 'Proyectos',
             contact: 'Contacto',
             localization: 'Español'
         },
         //Home
         home: {
-            description: '¡Jueguito muy chulito!',
+            description: '¡Jueguitos muy chulitos!',
         },
         //About
         about: {
@@ -104,16 +157,67 @@ const locales = {
                 El reino se mantiene a salvo gracias a unos ancestrales papiros mágicos que mantienen el orden. 
                 El equilibrio de Hayashi se ve amenazado cuando el Culto de la Llama quebranta la gran puerta e irrumpe en el pueblo para robar los papiros y secuestrar al príncipe Kami, hermano de Washi, para emplearlo como receptáculo y resucitar a Akarigami, una deidad temible que pretende destruir el mundo. 
                 <br><br>
-                Los jugadores acompañarán al pequeño Washi, un guerrero origami cuyo objetivo es liberar a su hermano de las garras del culto y recuperar los papiros sagrados para devolver el orden al reino y sellar a Akarigami.`
+                Los jugadores acompañarán al pequeño Washi, un guerrero origami cuyo objetivo es liberar a su hermano de las garras del culto y recuperar los papiros sagrados para devolver el orden al reino y sellar a Akarigami.`,
+            images: '¡Chequea algunas capturas!'
         },
         //Team
         team: {
-            buddy1: 'Programador, Diseñador de SFX, Diseñador de UI/UX',
-            buddy2: 'Programador, Artista 2D',
-            buddy3: 'Artista 3D',
-            buddy4: 'Artista 3D, Diseñadora de UX',
-            buddy5: 'Artista de Concept, Artista 2D, Diseñadora de UI',
-            buddy6: 'Soporte Adicional'
+            alex: 'Programador, Diseñador de SFX, Diseñador de UI/UX',
+            racu: 'Artista 3D',
+            pablo: 'Programador, Artista 2D',
+            mar: 'Artista 3D, Diseñadora de UX',
+            sara: 'Artista de Concept, Artista 2D, Diseñadora de UI',
+            carlos: 'Soporte Adicional'
+        },
+        //Projects
+        projects: {
+            title: 'Otros Proyectos',
+            list: {
+                tochimochi: {
+                    title: 'Tochimochi',
+                    content: `
+                        Segundo puesto en la edicion international de la <a href="https://itch.io/jam/game-jam-internacional-cutn-buenos-aires" target="_blank">gamejam de GameScholars</a>.
+                        <br><br>
+                        En Tochimochi ayudarás a tu nuevo amigo virtual, Mochi, a completar la misión de ver a su abuela. Para ello, tendrás que combinar el mundo real con el virtual para resolver puzles usando tu ordenador y tu móvil.
+                    `,
+                    button: 'Descargar&nbsp<i>Tochimochi</i>'
+                },
+                hardcore_kitty: {
+                    title: 'Hardcore Kitty',
+                    content: `
+                        Tercer puesto en la 6º edicion de la <a href="https://itch.io/jam/6-edicin-game-jam-game-scholars" target="_blank">gamejam de GameScholars</a>.
+                        <br><br>
+                        En Hardcore Kitty tomarás el rol de un gato que trabaja en una empresa de reparto.
+                        <br><br>
+                        Tu objetivo es encontrar puntos de recogida, coger la comida y llevarla hasta los puntos de entrega haciendo trucos y piruetas con el skate por el camino.
+                    `,
+                    button: 'Descargar&nbsp<i>Hardcore Kitty</i>'
+                },
+                raccoon: {
+                    title: 'Esto AÚN no es un Juego',
+                    content: `
+                        Ganador de la 3º edicion de la <a href="https://itch.io/jam/gamescholars-3rd-edition" target="_blank">gamejam de GameScholars</a>.
+                        <br><br>
+                        En Esto AÚN no es un juego ayudarás a un mapache programador a terminar su juego antes de que acabe su gamejam.
+                        <br><br>
+                        Debido al poco tiempo que le queda, para conseguirlo tendrás que meterte dentro de este y arreglar los bugs desde su interior.
+                        <br><br>
+                        Desde allí tu misión será cambiar cómo funcionan las cosas, de manera que se pueda llegar hasta el final de cada nivel y así continuar hasta el siguiente.
+                    `,
+                    button: 'Descargar&nbsp<i>Esto AÚN no es un Juego</i>'
+                },
+                spyw4re: {
+                    title: 'Spyw4re',
+                    content: `
+                        Segundo puesto de 25 en la 5º edicion de la <a href="https://itch.io/jam/5-edicin-game-jam-game-scholars" target="_blank">gamejam de GameScholars</a>.
+                        <br><br>
+                        En Spyw4re, eres un operador de CCTV en un asilo. El edificio se está derrumbando y un paciente todavía está dentro, por lo que tendrás que ayudarlo a salir.
+                        <br><br>
+                        Para lograrlo, tendrás que resolver algunos acertijos y derrotar a algunos enemigos, pero no creas que será tan fácil, alguien no quiere que lo ayudes...
+                    `,
+                    button: 'Descargar&nbsp<i>Spyw4re</i>'
+                }
+            }
         },
         //Footer
         footer: {
@@ -157,11 +261,12 @@ class Sidebar {
     #about = document.getElementById('sidebar-about');
     #images = document.getElementById('sidebar-images');
     #team = document.getElementById('sidebar-team');
+    #projects = document.getElementById('sidebar-projects');
     #footer = document.getElementById('sidebar-footer');
     #localization = document.getElementById('sidebar-localization');
 
     constructor() {
-        new CurrentPageIndicator(['home', 'about', 'images', 'team', 'footer']);
+        new CurrentPageIndicator(['home', 'about', 'images', 'team', 'projects', 'footer']);
     }
 
     localize = () => {
@@ -169,6 +274,7 @@ class Sidebar {
         this.#about.innerText = loc.sidebar.about;
         this.#images.innerText = loc.sidebar.images;
         this.#team.innerText = loc.sidebar.team;
+        this.#projects.innerText = loc.sidebar.projects;
         this.#footer.innerText = loc.sidebar.contact;
         this.#localization.innerText = loc.sidebar.localization;
     }
@@ -197,7 +303,7 @@ function goTo(id) {
 | $$  | $$|  $$$$$$/| $$ | $$ | $$|  $$$$$$$
 |__/  |__/ \______/ |__/ |__/ |__/ \______*/
 
-class Home {
+class HomePage {
 
     //State
     #description = document.getElementById('homeDescription');
@@ -210,7 +316,7 @@ class Home {
 
 }
 
-const home = new Home();
+const home = new HomePage();
 
 
 
@@ -223,12 +329,13 @@ const home = new Home();
 | $$  | $$| $$$$$$$/|  $$$$$$/|  $$$$$$/  |  $$$$/
 |__/  |__/|_______/  \______/  \______/    \__*/
 
-class About {
+class AboutPage {
 
     //State
     #title = document.getElementById('aboutTitle');
     #content = document.getElementById('aboutContent');
     #features = document.getElementById('aboutFeatures');
+    #images = document.getElementById('aboutImages');
 
     localize = () => {
         this.#title.innerText = loc.about.title;
@@ -239,11 +346,12 @@ class About {
             const feature = loc.about.feature[i];
             element.innerText = feature;
         }
+        this.#images.innerText = loc.about.images;
     }
 
 }
 
-const about = new About();
+const about = new AboutPage();
 
 
  /*$$$$$
@@ -258,7 +366,7 @@ const about = new About();
                                 |  $$$$$$/
                                  \_____*/
 
-class Images {
+class ImagesPage {
 
     //Components
     #background = document.getElementById('images');
@@ -316,7 +424,7 @@ class Images {
 
 }
 
-const images = new Images();
+const images = new ImagesPage();
 
  /*$$$$$$$
 |__  $$__/
@@ -327,64 +435,73 @@ const images = new Images();
    | $$|  $$$$$$$|  $$$$$$$| $$ | $$ | $$
    |__/ \_______/ \_______/|__/ |__/ |_*/
 
-class Team {
+const Buddies = {
+    Alex: {
+        id: 'alex',
+        image: 'Data/Images/Team/alex.webp',
+        name: 'Alex',
+        button: {
+            name: 'Portfolio',
+            url: 'https://botpa.vercel.app/'
+        }
+    },
+    Raul: {
+        id: 'racu',
+        image: 'Data/Images/Team/raul.webp',
+        name: 'Raúl',
+        button: {
+            name: 'Itch.io',
+            url: 'https://racurrandom.itch.io/'
+        }
+    },
+    Pablo: {
+        id: 'pablo',
+        image: 'Data/Images/Team/pablo.webp',
+        name: 'Pablo',
+        button: {
+            name: 'Itch.io',
+            url: 'https://thatbit.itch.io/'
+        }
+    },
+    Mar: {
+        id: 'mar',
+        image: 'Data/Images/Team/mar.webp',
+        name: 'Mar',
+        button: {
+            name: 'Itch.io',
+            url: 'https://mar-tess.itch.io/'
+        }
+    },
+    Sara: {
+        id: 'sara',
+        image: 'Data/Images/Team/sara.webp',
+        name: 'Sara',
+        button: {
+            name: 'Itch.io',
+            url: 'https://sararb.itch.io/'
+        }
+    },
+    Carlos: {
+        id: 'carlos',
+        image: 'Data/Images/Team/carlos.png',
+        name: 'Carlos'
+    }
+}
+
+class TeamPage {
 
     //Buddies
-    buddies = [
-        {
-            idx: 1,
-            img: 'Data/Images/Team/alex.webp',
-            name: 'Alex',
-            link: {
-                name: 'Portfolio',
-                url: 'https://botpa.vercel.app/'
-            }
-        },
-        {
-            idx: 2,
-            img: 'Data/Images/Team/pablo.webp',
-            name: 'Pablo',
-            link: {
-                name: 'Itch.io',
-                url: 'https://thatbit.itch.io/'
-            }
-        },
-        {
-            idx: 3,
-            img: 'Data/Images/Team/raul.webp',
-            name: 'Raúl',
-            link: {
-                name: 'Itch.io',
-                url: 'https://racurrandom.itch.io/'
-            }
-        },
-        {
-            idx: 4,
-            img: 'Data/Images/Team/mar.webp',
-            name: 'Mar',
-            link: {
-                name: 'Itch.io',
-                url: 'https://mar-tess.itch.io/'
-            }
-        },
-        {
-            idx: 5,
-            img: 'Data/Images/Team/sara.webp',
-            name: 'Sara',
-            link: {
-                name: 'Itch.io',
-                url: 'https://sararb.itch.io/'
-            }
-        },
-        {
-            idx: 6,
-            img: 'Data/Images/Team/carlos.png',
-            name: 'Carlos'
-        }
-    ]
+    #buddies = [
+        Buddies.Alex,
+        Buddies.Raul,
+        Buddies.Pablo,
+        Buddies.Mar,
+        Buddies.Sara,
+        Buddies.Carlos
+    ];
 
-    eachbuddy(fun) {
-        for (let i = 1; i <= this.buddies.length; i++) fun(this.buddies[i - 1], i);
+    eachbuddy = (fun) => {
+        for (let i = 0; i < this.#buddies.length; i++) fun(this.#buddies[i], i);
     }
 
     //State
@@ -392,22 +509,24 @@ class Team {
 
     constructor() {
         //Shuffle buddies
-        Util.shuffleArray(this.buddies, this.buddies.length - 1);
+        Util.shuffleArray(this.#buddies, this.#buddies.length - 1);
 
         //Apply info to buddies
         this.eachbuddy((buddy, index) => {
+            //Get elements
             const img = document.getElementById(`teamBuddy${index}-img`);
             const name = document.getElementById(`teamBuddy${index}-name`);
-            const link = document.getElementById(`teamBuddy${index}-link`);
+            const button = document.getElementById(`teamBuddy${index}-button`);
 
-            img.src = buddy.img;
+            //Update buddy
+            img.src = buddy.image;
             name.innerText = buddy.name;
-            if (buddy.link) {
-                link.style.display = 'flex';
-                link.innerText = buddy.link.name;
-                link.href = buddy.link.url;
+            if (buddy.button) {
+                button.style.display = 'flex';
+                button.innerText = buddy.button.name;
+                button.href = buddy.button.url;
             } else {
-                link.style.display = 'none';
+                button.style.display = 'none';
             }
         });
     }
@@ -416,13 +535,123 @@ class Team {
         this.#title.innerText = loc.sidebar.team;
         this.eachbuddy((buddy, index) => {
             const desc = document.getElementById(`teamBuddy${index}-desc`);
-            desc.innerText = loc.team[`buddy${buddy.idx}`]
+            desc.innerText = loc.team[buddy.id];
         });
     }
 
 }
 
-const team = new Team();
+const team = new TeamPage();
+
+
+ /*$$$$$$                                               /$$
+| $$__  $$                                             | $$
+| $$  \ $$ /$$$$$$   /$$$$$$  /$$  /$$$$$$   /$$$$$$$ /$$$$$$   /$$$$$$$
+| $$$$$$$//$$__  $$ /$$__  $$|__/ /$$__  $$ /$$_____/|_  $$_/  /$$_____/
+| $$____/| $$  \__/| $$  \ $$ /$$| $$$$$$$$| $$        | $$   |  $$$$$$
+| $$     | $$      | $$  | $$| $$| $$_____/| $$        | $$ /$$\____  $$
+| $$     | $$      |  $$$$$$/| $$|  $$$$$$$|  $$$$$$$  |  $$$$//$$$$$$$/
+|__/     |__/       \______/ | $$ \_______/ \_______/   \___/ |_______/
+                        /$$  | $$
+                       |  $$$$$$/
+                        \_____*/
+
+const Projects = {
+    tochimochi: {
+        id: 'tochimochi',
+        image: 'tochimochi.webp',
+        button: 'https://botpa.itch.io/tochimochi',
+        buddies: [
+            Buddies.Alex,
+            Buddies.Raul,
+            Buddies.Sara,
+            Buddies.Pablo,
+            Buddies.Mar
+        ]
+    },
+    hardcore_kitty: {
+        id: 'hardcore_kitty',
+        image: 'hardcore_kitty.webp',
+        button: 'https://botpa.itch.io/hardcore-kitty',
+        buddies: [
+            Buddies.Alex,
+            Buddies.Raul,
+            Buddies.Pablo,
+            Buddies.Mar
+        ]
+    },
+    raccoon: {
+        id: 'raccoon',
+        image: 'raccoon.webp',
+        button: 'https://botpa.itch.io/esto-aun-no-es-un-juego',
+        buddies: [
+            Buddies.Alex,
+            Buddies.Raul,
+            Buddies.Mar,
+            Buddies.Sara
+        ]
+    },
+    spyw4re: {
+        id: 'spyw4re',
+        image: 'spyw4re.webp',
+        button: 'https://botpa.itch.io/spyw4re',
+        buddies: [
+            Buddies.Alex,
+            Buddies.Raul
+        ]
+    }
+}
+
+class ProjectsPage {
+
+    //Projects
+    #projects = [
+        Projects.tochimochi,
+        Projects.raccoon,
+        Projects.hardcore_kitty,
+        Projects.spyw4re
+    ];
+
+    //State
+    #title = document.getElementById('projectsTitle');
+
+    constructor() {}
+
+    localize = () => {
+        this.#title.innerText = loc.projects.title;
+        for (let i = 0; i < this.#projects.length; i++) {
+            //Get elements
+            const image = document.getElementById(`project${i}-image`);
+            const buddies = document.getElementById(`project${i}-buddies`);
+            const title = document.getElementById(`project${i}-title`);
+            const content = document.getElementById(`project${i}-content`);
+            const button = document.getElementById(`project${i}-button`);
+
+            //Update project info
+            const project = this.#projects[i];
+            image.src = `Data/Images/Projects/${project.image}`;
+            buddies.innerHTML = '';
+            for (const buddy of project.buddies) {
+                const a = document.createElement('a');
+                a.classList.add('projectBuddy');
+                a.target = '_blank';
+                a.href = buddy.button.url;
+                a.title = buddy.name;
+                const img = document.createElement('img');
+                img.src = buddy.image;
+                a.appendChild(img);
+                buddies.appendChild(a);
+            }
+            title.innerText = loc.projects.list[project.id].title;
+            content.innerHTML = loc.projects.list[project.id].content;
+            button.innerHTML = loc.projects.list[project.id].button;
+            button.href = project.button;
+        }
+    }
+
+}
+
+const projects = new ProjectsPage();
 
 
  /*$$$$$$$                    /$$
@@ -552,6 +781,7 @@ function localize() {
     home.localize();
     about.localize();
     images.localize();
+    projects.localize();
     team.localize();
     footer.localize();
 

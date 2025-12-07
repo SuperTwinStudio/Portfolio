@@ -27,7 +27,7 @@ html {
     --textThemedFilter: brightness(0) saturate(100%) invert(16%) sepia(10%) saturate(4512%) hue-rotate(347deg) brightness(94%) contrast(92%);
     --textAlt: #83868d;
     --textAltFilter: brightness(0) saturate(100%) invert(58%) sepia(24%) saturate(506%) hue-rotate(183deg) brightness(84%) contrast(87%);
-    --accent: #fea92b;
+    --accent: #e0a22f;
     --link: #f32853;
     --linkFilter: brightness(0) invert(29%) sepia(74%) saturate(2123%) hue-rotate(327deg) brightness(83%) contrast(111%);
 
@@ -638,6 +638,14 @@ dialog[open] {
     position: relative;
 }
 
+@media screen and (orientation:portrait) {
+    #content {
+        /* Size */
+        width: 100%;
+        flex: unset;
+    }
+}
+
 /* Page */
 .page {
     /* Size */
@@ -819,12 +827,20 @@ dialog[open] {
 #about {
     /* Layout */
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.aboutColumns {
+    /* Layout */
+    display: flex;
     flex-direction: row;
     gap: 100px;
 }
 
 @media screen and (orientation:portrait) {
-    #about {
+    .aboutColumns {
         /* Layout */
         flex-direction: column;
         gap: 20px;
@@ -1056,6 +1072,148 @@ dialog[open] {
 .teamBuddy > div > span:nth-of-type(2) {
     /* Text */
     font-size: 0.8rem;
+}
+
+
+ /*$$$$$$                                               /$$
+| $$__  $$                                             | $$
+| $$  \ $$ /$$$$$$   /$$$$$$  /$$  /$$$$$$   /$$$$$$$ /$$$$$$   /$$$$$$$
+| $$$$$$$//$$__  $$ /$$__  $$|__/ /$$__  $$ /$$_____/|_  $$_/  /$$_____/
+| $$____/| $$  \__/| $$  \ $$ /$$| $$$$$$$$| $$        | $$   |  $$$$$$
+| $$     | $$      | $$  | $$| $$| $$_____/| $$        | $$ /$$\____  $$
+| $$     | $$      |  $$$$$$/| $$|  $$$$$$$|  $$$$$$$  |  $$$$//$$$$$$$/
+|__/     |__/       \______/ | $$ \_______/ \_______/   \___/ |_______/
+                        /$$  | $$
+                       |  $$$$$$/
+                        \_____*/
+
+/* Projects */
+.projectsList {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Project */
+.project {
+    /* Layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@media screen and (orientation:landscape) {
+    .project[reverse] {
+        /* Layout */
+        flex-direction: row-reverse;
+    }
+}
+
+@media screen and (orientation:portrait) {
+    .project {
+        /* Layout */
+        flex-direction: column;
+    }
+}
+
+.projectImage {
+    /* Size */
+    width: 52%;
+    aspect-ratio: 16/9;
+
+    /* Layout */
+    position: relative;
+
+    /* Visuals */
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+@media screen and (orientation:portrait) {
+    .projectImage {
+        /* Size */
+        width: unset;
+        flex: 1;
+    }
+}
+
+.projectImage > img {
+    /* Size */
+    width: 100%;
+    height: 100%;
+
+    /* Other */
+    object-fit: cover;
+}
+
+.projectContent {
+    /* Size */
+    flex: 1;
+
+    /* Spacing */
+    padding: 20px;
+
+    /* Layout */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+@media screen and (orientation:portrait) {
+    .projectContent {
+        /* Spacing */
+        padding: 20px 0;
+    }
+}
+
+.projectContent > div:nth-child(1) {
+    /* Layout */
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.projectContent > div:nth-child(2) {
+    /* Text */
+    font-family: phonk;
+    font-size: 2rem;
+}
+
+.projectContent > div:nth-child(3) {
+    /* Text */
+    text-align: justify;
+}
+
+/* Project Buddy */
+.projectBuddy {
+    /* Size */
+    width: 30px;
+    height: 30px;
+
+    /* Layout */
+    position: relative;
+
+    /* Visuals */
+    border-radius: 50%;
+
+    /* Other */
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.projectBuddy > img {
+    /* Size */
+    width: 100%;
+    height: 30px;
+
+    /* Visuals */
+    border-radius: 50%;
+
+    /* Other */
+    object-fit: cover;
 }
 
 
