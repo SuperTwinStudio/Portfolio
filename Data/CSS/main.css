@@ -1179,7 +1179,7 @@ dialog[open] {
 .projectContent > div:nth-child(2) {
     /* Text */
     font-family: phonk;
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 
 .projectContent > div:nth-child(3) {
